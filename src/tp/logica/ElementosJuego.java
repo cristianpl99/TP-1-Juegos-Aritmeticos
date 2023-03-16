@@ -10,11 +10,12 @@ public class ElementosJuego {
 
 	public ElementosJuego(int filas, int columnas) {
 		int mat[][] = new int[filas][columnas];
-		for (int f = 0; f < filas; f++) {		
-			for (int c = 0; c < columnas; c++) {
-				random = new Random(System.currentTimeMillis());
-				mat[f][c] = random.nextInt(4);		
+		random = new Random(System.currentTimeMillis());
+		for (int fila =0; fila<mat.length; fila++) {
+			for (int col =0; col<mat[0].length; col ++) { {
+				mat[fila][col] = random.nextInt(4);		
 			}
+		}
 		}
 		this.mat = mat;
 		
@@ -25,6 +26,7 @@ public class ElementosJuego {
 		    	sum = sum + mat[f][c];
 		    }
 		    filaResul[f] = sum;
+		    sum =0;
 		this.filaResul = filaResul;
 		
 		}
@@ -35,7 +37,16 @@ public class ElementosJuego {
 		    	sum = sum + mat[f][c];
 		    }
 		    columResul[c] = sum;
+		    sum=0;
 		this.columResul = columResul;
+		}
+	}
+	
+	public void imprimirMatriz() {
+		for (int fila =0; fila<this.mat.length; fila++) {
+			for (int col =0; col<mat[0].length; col ++) {
+				System.out.println(this.mat[fila][col]);
+			}
 		}
 	}
 	public int elemMat (int fila, int col) {
