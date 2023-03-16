@@ -78,16 +78,23 @@ public class Principal {
 		frmTra.getContentPane().add(lblElegirNivel);
 		
 		JButton btnComenzar = new JButton("Empezar el Juego");
+		btnComenzar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmTra.dispose();
+				JuegoAritmetico juego = new JuegoAritmetico();
+				juego.setVisible(true);
+			}
+		});
 		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnComenzar.setBackground(Color.DARK_GRAY);
 		btnComenzar.setBounds(209, 354, 138, 41);
 		frmTra.getContentPane().add(btnComenzar);
 		
 		txtNombre = new JTextField();
+		txtNombre.setToolTipText("");
 		txtNombre.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		txtNombre.setForeground(Color.GRAY);
 		txtNombre.setHorizontalAlignment(SwingConstants.CENTER);
-		txtNombre.setText("ingrese aqui su nombre");
 		txtNombre.setBounds(153, 162, 258, 20);
 		frmTra.getContentPane().add(txtNombre);
 		txtNombre.setColumns(10);
