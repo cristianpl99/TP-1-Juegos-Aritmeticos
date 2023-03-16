@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import tp.logica.Juego;
 
 import javax.swing.JLabel;
 import java.awt.Toolkit;
@@ -34,7 +33,7 @@ public class JuegoAritmetico extends JFrame {
 	private JTextField textD2;
 	private JTextField textD3;
 	private JTextField textD4;
-	private Juego juego;
+
 
 	/**
 	 * Launch the application.
@@ -68,9 +67,9 @@ public class JuegoAritmetico extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Juego juego = new Juego();
+		//Juego juego = new Juego();
 		
-		int[][] mat = juego.crearMatriz();
+		//int[][] mat = juego.crearMatriz();
 		
 		textA1 = new JTextField();
 		textA1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -78,7 +77,6 @@ public class JuegoAritmetico extends JFrame {
 		textA1.setBounds(101, 69, 50, 43);
 		contentPane.add(textA1);
 		textA1.setColumns(10);
-		textA1.setText(String.valueOf(mat[0][0]));
 		
 		textA2 = new JTextField();
 		textA2.setHorizontalAlignment(SwingConstants.CENTER);
