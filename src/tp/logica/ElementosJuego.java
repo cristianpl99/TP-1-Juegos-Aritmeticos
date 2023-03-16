@@ -13,7 +13,7 @@ public class ElementosJuego {
 		random = new Random(System.currentTimeMillis());
 		for (int fila =0; fila<mat.length; fila++) {
 			for (int col =0; col<mat[0].length; col ++) { {
-				mat[fila][col] = random.nextInt(4);		
+				mat[fila][col] = random.nextInt(4)+ 1;		
 			}
 		}
 		}
@@ -41,7 +41,7 @@ public class ElementosJuego {
 		this.columResul = columResul;
 		}
 	}
-	
+	 //auxiliar para ver el log
 	public void imprimirMatriz() {
 		for (int fila =0; fila<this.mat.length; fila++) {
 			for (int col =0; col<mat[0].length; col ++) {
