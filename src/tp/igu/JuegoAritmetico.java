@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import tp.logica.ElementosJuego;
 
 import javax.swing.JLabel;
 import java.awt.Toolkit;
@@ -41,6 +42,7 @@ public class JuegoAritmetico extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
 					JuegoAritmetico frame = new JuegoAritmetico();
 					frame.setVisible(true);
@@ -55,6 +57,7 @@ public class JuegoAritmetico extends JFrame {
 	 * Create the frame.
 	 */
 	public JuegoAritmetico() {
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(JuegoAritmetico.class.getResource("/icons/progress/ani/2@2x.png")));
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,9 +70,8 @@ public class JuegoAritmetico extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		//Juego juego = new Juego();
-		
-		//int[][] mat = juego.crearMatriz();
+		//inicio una instancia del objeto elementosJuego
+		ElementosJuego elementos = new ElementosJuego(4,4);
 		
 		textA1 = new JTextField();
 		textA1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -77,6 +79,7 @@ public class JuegoAritmetico extends JFrame {
 		textA1.setBounds(101, 69, 50, 43);
 		contentPane.add(textA1);
 		textA1.setColumns(10);
+		textA1.setText(String.valueOf(elementos.elemMat(0, 0)));
 		
 		textA2 = new JTextField();
 		textA2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -84,6 +87,8 @@ public class JuegoAritmetico extends JFrame {
 		textA2.setColumns(10);
 		textA2.setBounds(200, 69, 50, 43);
 		contentPane.add(textA2);
+		textA1.setText(String.valueOf(elementos.elemMat(0, 1)));
+		
 		
 		textA3 = new JTextField();
 		textA3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -91,6 +96,7 @@ public class JuegoAritmetico extends JFrame {
 		textA3.setColumns(10);
 		textA3.setBounds(300, 69, 50, 43);
 		contentPane.add(textA3);
+		textA1.setText(String.valueOf(elementos.elemMat(0, 2)));
 		
 		textA4 = new JTextField();
 		textA4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -98,6 +104,7 @@ public class JuegoAritmetico extends JFrame {
 		textA4.setColumns(10);
 		textA4.setBounds(400, 69, 50, 43);
 		contentPane.add(textA4);
+		textA1.setText(String.valueOf(elementos.elemMat(0, 3)));
 		
 		textB1 = new JTextField();
 		textB1.setHorizontalAlignment(SwingConstants.CENTER);

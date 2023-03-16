@@ -13,7 +13,7 @@ public class ElementosJuego {
 		for (int f = 0; f < filas; f++) {		
 			for (int c = 0; c < columnas; c++) {
 				random = new Random(System.currentTimeMillis());
-				mat[f][c] = random.nextInt(3)+1;		
+				mat[f][c] = random.nextInt(4);		
 			}
 		}
 		this.mat = mat;
@@ -21,7 +21,7 @@ public class ElementosJuego {
 		int[] filaResul = new int[filas];
 		for (int f = 0; f < mat.length; f++) {
 			int sum = 0;
-		    for (int c = 0; c < mat[c].length; c++) {
+		    for (int c = 0; c < mat[0].length; c++) {
 		    	sum = sum + mat[f][c];
 		    }
 		    filaResul[f] = sum;
@@ -37,7 +37,21 @@ public class ElementosJuego {
 		    columResul[c] = sum;
 		this.columResul = columResul;
 		}
-		
-		
 	}
+	public int elemMat (int fila, int col) {
+		return this.mat[fila][col];
+	}
+
+	public int[][] getMat() {
+		return mat;
+	}
+	
+	public int[] getFilaResul() {
+		return filaResul;
+	}
+
+	public int[] getColumResul() {
+		return columResul;
+	}
+	
 }
