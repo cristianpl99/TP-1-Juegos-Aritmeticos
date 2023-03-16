@@ -14,22 +14,22 @@ import javax.swing.JLabel;
 public class Juego {
 
 	private JFrame frmProgramacionIii;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
+	private JTextField txt11;
+	private JTextField txt12;
+	private JTextField txt13;
+	private JTextField txt14;
+	private JTextField txt21;
+	private JTextField txt22;
+	private JTextField txt23;
+	private JTextField txt24;
+	private JTextField txt31;
+	private JTextField txt32;
+	private JTextField txt33;
+	private JTextField txt34;
+	private JTextField txt41;
+	private JTextField txt42;
+	private JTextField txt43;
+	private JTextField txt44;
 
 	/**
 	 * Launch the application.
@@ -67,33 +67,33 @@ public class Juego {
 		frmProgramacionIii.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmProgramacionIii.getContentPane().setLayout(null);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField.setBounds(100, 50, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField);
-		textField.setColumns(10);
+		txt11 = new JTextField();
+		txt11.setHorizontalAlignment(SwingConstants.CENTER);
+		txt11.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt11.setBounds(100, 50, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt11);
+		txt11.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_1.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_1.setColumns(10);
-		textField_1.setBounds(200, 50, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_1);
+		txt12 = new JTextField();
+		txt12.setHorizontalAlignment(SwingConstants.CENTER);
+		txt12.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt12.setColumns(10);
+		txt12.setBounds(200, 50, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt12);
 		
-		textField_2 = new JTextField();
-		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_2.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_2.setColumns(10);
-		textField_2.setBounds(300, 50, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_2);
+		txt13 = new JTextField();
+		txt13.setHorizontalAlignment(SwingConstants.CENTER);
+		txt13.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt13.setColumns(10);
+		txt13.setBounds(300, 50, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt13);
 		
-		textField_3 = new JTextField();
-		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_3.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_3.setColumns(10);
-		textField_3.setBounds(400, 50, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_3);
+		txt14 = new JTextField();
+		txt14.setHorizontalAlignment(SwingConstants.CENTER);
+		txt14.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt14.setColumns(10);
+		txt14.setBounds(400, 50, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt14);
 		
 		JLabel lblNewLabel = new JLabel("5");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
@@ -101,89 +101,89 @@ public class Juego {
 		lblNewLabel.setBounds(500, 50, 46, 47);
 		frmProgramacionIii.getContentPane().add(lblNewLabel);
 		
-		textField_4 = new JTextField();
-		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_4.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_4.setColumns(10);
-		textField_4.setBounds(100, 150, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_4);
+		txt21 = new JTextField();
+		txt21.setHorizontalAlignment(SwingConstants.CENTER);
+		txt21.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt21.setColumns(10);
+		txt21.setBounds(100, 150, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt21);
 		
-		textField_5 = new JTextField();
-		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_5.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_5.setColumns(10);
-		textField_5.setBounds(200, 150, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_5);
+		txt22 = new JTextField();
+		txt22.setHorizontalAlignment(SwingConstants.CENTER);
+		txt22.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt22.setColumns(10);
+		txt22.setBounds(200, 150, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt22);
 		
-		textField_6 = new JTextField();
-		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_6.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_6.setColumns(10);
-		textField_6.setBounds(300, 150, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_6);
+		txt23 = new JTextField();
+		txt23.setHorizontalAlignment(SwingConstants.CENTER);
+		txt23.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt23.setColumns(10);
+		txt23.setBounds(300, 150, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt23);
 		
-		textField_7 = new JTextField();
-		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_7.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_7.setColumns(10);
-		textField_7.setBounds(400, 150, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_7);
+		txt24 = new JTextField();
+		txt24.setHorizontalAlignment(SwingConstants.CENTER);
+		txt24.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt24.setColumns(10);
+		txt24.setBounds(400, 150, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt24);
 		
-		textField_8 = new JTextField();
-		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_8.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_8.setColumns(10);
-		textField_8.setBounds(100, 248, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_8);
+		txt31 = new JTextField();
+		txt31.setHorizontalAlignment(SwingConstants.CENTER);
+		txt31.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt31.setColumns(10);
+		txt31.setBounds(100, 248, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt31);
 		
-		textField_9 = new JTextField();
-		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_9.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_9.setColumns(10);
-		textField_9.setBounds(200, 248, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_9);
+		txt32 = new JTextField();
+		txt32.setHorizontalAlignment(SwingConstants.CENTER);
+		txt32.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt32.setColumns(10);
+		txt32.setBounds(200, 248, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt32);
 		
-		textField_10 = new JTextField();
-		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_10.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_10.setColumns(10);
-		textField_10.setBounds(300, 248, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_10);
+		txt33 = new JTextField();
+		txt33.setHorizontalAlignment(SwingConstants.CENTER);
+		txt33.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt33.setColumns(10);
+		txt33.setBounds(300, 248, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt33);
 		
-		textField_11 = new JTextField();
-		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_11.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_11.setColumns(10);
-		textField_11.setBounds(400, 248, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_11);
+		txt34 = new JTextField();
+		txt34.setHorizontalAlignment(SwingConstants.CENTER);
+		txt34.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt34.setColumns(10);
+		txt34.setBounds(400, 248, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt34);
 		
-		textField_12 = new JTextField();
-		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_12.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_12.setColumns(10);
-		textField_12.setBounds(100, 329, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_12);
+		txt41 = new JTextField();
+		txt41.setHorizontalAlignment(SwingConstants.CENTER);
+		txt41.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt41.setColumns(10);
+		txt41.setBounds(100, 329, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt41);
 		
-		textField_13 = new JTextField();
-		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_13.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_13.setColumns(10);
-		textField_13.setBounds(200, 329, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_13);
+		txt42 = new JTextField();
+		txt42.setHorizontalAlignment(SwingConstants.CENTER);
+		txt42.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt42.setColumns(10);
+		txt42.setBounds(200, 329, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt42);
 		
-		textField_14 = new JTextField();
-		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_14.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_14.setColumns(10);
-		textField_14.setBounds(300, 329, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_14);
+		txt43 = new JTextField();
+		txt43.setHorizontalAlignment(SwingConstants.CENTER);
+		txt43.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt43.setColumns(10);
+		txt43.setBounds(300, 329, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt43);
 		
-		textField_15 = new JTextField();
-		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_15.setFont(new Font("Tahoma", Font.BOLD, 24));
-		textField_15.setColumns(10);
-		textField_15.setBounds(400, 329, 51, 47);
-		frmProgramacionIii.getContentPane().add(textField_15);
+		txt44 = new JTextField();
+		txt44.setHorizontalAlignment(SwingConstants.CENTER);
+		txt44.setFont(new Font("Tahoma", Font.BOLD, 24));
+		txt44.setColumns(10);
+		txt44.setBounds(400, 329, 51, 47);
+		frmProgramacionIii.getContentPane().add(txt44);
 		
 		JLabel lblNewLabel_1 = new JLabel("7");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -233,10 +233,10 @@ public class Juego {
 		lblNewLabel_8.setBounds(500, 431, 65, 14);
 		frmProgramacionIii.getContentPane().add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_8_1 = new JLabel("90");
-		lblNewLabel_8_1.setForeground(Color.RED);
-		lblNewLabel_8_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel_8_1.setBounds(575, 431, 65, 14);
-		frmProgramacionIii.getContentPane().add(lblNewLabel_8_1);
+		JLabel lblTiempo = new JLabel("90");
+		lblTiempo.setForeground(Color.RED);
+		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblTiempo.setBounds(575, 431, 65, 14);
+		frmProgramacionIii.getContentPane().add(lblTiempo);
 	}
 }

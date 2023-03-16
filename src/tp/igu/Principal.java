@@ -15,10 +15,18 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.JSlider;
+import javax.swing.JTable;
+import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Principal {
 
 	private JFrame frmTra;
+	private JTextField txtNombre;
 
 	/**
 	 * Launch the application.
@@ -53,7 +61,7 @@ public class Principal {
 		frmTra.setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/icons/progress/ani/8@2x.png")));
 		frmTra.setTitle("Programacion III");
 		frmTra.setResizable(false);
-		frmTra.setBounds(100, 100, 559, 382);
+		frmTra.setBounds(100, 100, 565, 467);
 		frmTra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTra.getContentPane().setLayout(null);
 		
@@ -66,31 +74,29 @@ public class Principal {
 		JLabel lblElegirNivel = new JLabel("ELEGIR NIVEL");
 		lblElegirNivel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblElegirNivel.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblElegirNivel.setBounds(115, 147, 324, 41);
+		lblElegirNivel.setBounds(26, 237, 258, 41);
 		frmTra.getContentPane().add(lblElegirNivel);
 		
-		JButton btnNivel1 = new JButton("Principiante");
-		btnNivel1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnNivel1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNivel1.setBackground(Color.GRAY);
-		btnNivel1.setBounds(62, 230, 99, 41);
-		frmTra.getContentPane().add(btnNivel1);
+		JButton btnComenzar = new JButton("Empezar el Juego");
+		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnComenzar.setBackground(Color.DARK_GRAY);
+		btnComenzar.setBounds(209, 354, 138, 41);
+		frmTra.getContentPane().add(btnComenzar);
 		
-		JButton btn2 = new JButton("Intermedio");
-		btn2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btn2.setBackground(Color.GRAY);
-		btn2.setBounds(232, 230, 99, 41);
-		frmTra.getContentPane().add(btn2);
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		txtNombre.setForeground(Color.GRAY);
+		txtNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNombre.setText("ingrese aqui su nombre");
+		txtNombre.setBounds(153, 162, 258, 20);
+		frmTra.getContentPane().add(txtNombre);
+		txtNombre.setColumns(10);
 		
-		JButton btn3 = new JButton("Experto");
-		btn3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btn3.setBackground(Color.GRAY);
-		btn3.setBounds(405, 230, 99, 41);
-		frmTra.getContentPane().add(btn3);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.BOLD, 14));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"PRINCIPIANTE", "INTERMEDIO", "EXPERTO"}));
+		comboBox.setBounds(322, 245, 138, 29);
+		frmTra.getContentPane().add(comboBox);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
