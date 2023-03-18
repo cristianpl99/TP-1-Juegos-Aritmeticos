@@ -1,21 +1,21 @@
 package tp.igu;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class Inicio extends JFrame {
 
@@ -42,7 +42,7 @@ public class Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Inicio() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Inicio.class.getResource("/icons/progress/ani/8.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(Inicio.class.getResource("/icons/progress/ani/8.png")));
 		setTitle("Programacion III - Bienvenidos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 399);
@@ -52,13 +52,13 @@ public class Inicio extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("TRABAJO PRACTICO 1 : JUEGOS ARITMETICOS");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel.setBounds(32, 28, 497, 41);
 		contentPane.add(lblNewLabel);
-		
+
 		textNombre = new JTextField();
 		textNombre.setToolTipText("");
 		textNombre.setHorizontalAlignment(SwingConstants.CENTER);
@@ -67,19 +67,19 @@ public class Inicio extends JFrame {
 		textNombre.setColumns(10);
 		textNombre.setBounds(152, 118, 258, 20);
 		contentPane.add(textNombre);
-		
+
 		JLabel lblElegirNivel = new JLabel("ELEGIR NIVEL");
 		lblElegirNivel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblElegirNivel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblElegirNivel.setBounds(10, 195, 258, 41);
 		contentPane.add(lblElegirNivel);
-		
+
 		JComboBox comboBoxNivel = new JComboBox();
-		comboBoxNivel.setModel(new DefaultComboBoxModel(new String[] {"Principiante", "Intermedio", "Experto"}));
+		comboBoxNivel.setModel(new DefaultComboBoxModel(new String[] { "Principiante", "Intermedio", "Experto" }));
 		comboBoxNivel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		comboBoxNivel.setBounds(319, 195, 109, 29);
 		contentPane.add(comboBoxNivel);
-		
+
 		JButton btnComenzar = new JButton("Empezar el Juego");
 		btnComenzar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
