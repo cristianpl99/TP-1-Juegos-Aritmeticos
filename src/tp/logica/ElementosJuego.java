@@ -1,5 +1,6 @@
 package tp.logica;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ElementosJuego {
@@ -8,6 +9,8 @@ public class ElementosJuego {
 	private Random random;
 	private int[] filaResul;
 	private int[] columResul;
+	private boolean[] filasComp;
+	private boolean[] columnasComp;
 
 	public ElementosJuego(int filas, int columnas) {
 		int mat[][] = new int[filas][columnas];
@@ -20,6 +23,16 @@ public class ElementosJuego {
 			}
 		}
 		this.mat = mat;
+		
+		filasComp = new boolean[filas];
+		for(int i = 0; i < filasComp.length; i++) {
+			filasComp[i] = false;
+		}
+			
+		columnasComp = new boolean[columnas];
+		for(int i = 0; i < columnasComp.length; i++) {
+			columnasComp[i] = false;
+		}
 
 		int[] filaResul = new int[filas];
 		for (int f = 0; f < mat.length; f++) {
@@ -89,21 +102,62 @@ public class ElementosJuego {
 			}
 		}
 	}
+	
+	//Nota de Jere: Hay que hacerle un test apropiado donde veamos que si las casillas son correctas y el boolean es false, actualiza los valores y viceversa
+	//sino no cambia los booleans
+	public void actualizarEstado() {
+		actualizarFilas();
+		actualizarColumnas();
+	}
+	
+	private void actualizarColumnas() {
+		for (int col = 0; col < mat[0].length; col++) {
+			boolean casillasColum = true;
+			for (int fila = 0; fila < this.mat.length; fila++) {
+				casillasColum = casillasColum && matrizChequeo[fila][col];
+			}
+			columnasComp[col] = casillasColum;
+		}
+	}
+	
+	private void actualizarFilas() {
+		for (int fila = 0; fila < this.mat.length; fila++) {
+			boolean casillasFila = true;
+			for (int col = 0; col < mat[0].length; col++) {
+				casillasFila = casillasFila && matrizChequeo[fila][col];
+			}
+			filasComp[fila] = casillasFila;
+		}	
+	}
+	
+	public ArrayList<Boolean> filasCompletas() {
+		ArrayList<Boolean> filasCompletas = new ArrayList<Boolean>();
+		for(int i = 0; i < filasComp.length; i++) {
+			filasCompletas.add(filasComp[i]);
+		}
+		return filasCompletas;
+	}
+	
+	public ArrayList<Boolean> columnasCompletas() {
+		ArrayList<Boolean> columnasCompletas = new ArrayList<Boolean>();
+		for(int i = 0; i < columnasComp.length; i++) {
+			columnasCompletas.add(columnasComp[i]);
+		}
+		return columnasCompletas;
+	}
 
 	public int elemMat(int fila, int col) {
 		return this.mat[fila][col];
 	}
 
-	public int[][] getMat() {
-		return mat;
+	public int[] getColumResul() {
+		return columResul;
 	}
 
 	public int[] getFilaResul() {
 		return filaResul;
 	}
 
-	public int[] getColumResul() {
-		return columResul;
-	}
+	
 
 }

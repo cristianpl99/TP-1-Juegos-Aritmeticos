@@ -17,7 +17,10 @@ import javax.swing.Timer;
 import tp.logica.ElementosJuego;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.Box;
+import java.awt.Panel;
 
 public class JuegoAritmetico extends JFrame {
 
@@ -40,21 +43,25 @@ public class JuegoAritmetico extends JFrame {
 	private JTextField textD4;
 	
 	private Timer timer = null;
+	private Panel panel_1;
+	private Panel panel_2;
+	private Panel panel_3;
+	private Panel panel_5;
+	private Panel panel_6;
+	private Panel panel_4;
 	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-
-				try {
-					JuegoAritmetico frame = new JuegoAritmetico();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				
+				Inicio inicio = new Inicio();
+				inicio.setVisible(true);
+				inicio.setLocationRelativeTo(null);
 			}
 		});
 	}
@@ -81,7 +88,7 @@ public class JuegoAritmetico extends JFrame {
 		ElementosJuego elementos = new ElementosJuego(4, 4);
 		// Auxiliar
 		elementos.imprimirMatriz();
-
+		
 		textA1 = new JTextField();
 		textA1.setHorizontalAlignment(SwingConstants.CENTER);
 		textA1.setFont(new Font("Tahoma", Font.BOLD, 25));
@@ -272,7 +279,49 @@ public class JuegoAritmetico extends JFrame {
 		lblTiempo.setBounds(142, 12, 123, 33);
 		contentPane.add(lblTiempo);
 		
-		Timer timer = new Timer(1000, new ActionListener(){
+		Panel panel_0 = new Panel();
+		panel_0.setBackground(new Color(255, 0, 0));
+		panel_0.setBounds(80, 51, 388, 76);
+		contentPane.add(panel_0);
+		
+		panel_1 = new Panel();
+		panel_1.setBackground(Color.RED);
+		panel_1.setBounds(80, 152, 388, 76);
+		contentPane.add(panel_1);
+		
+		panel_2 = new Panel();
+		panel_2.setBackground(Color.RED);
+		panel_2.setBounds(80, 253, 388, 76);
+		contentPane.add(panel_2);
+		
+		panel_3 = new Panel();
+		panel_3.setBackground(Color.RED);
+		panel_3.setBounds(80, 353, 388, 76);
+		contentPane.add(panel_3);
+		
+		panel_4 = new Panel();
+		panel_4.setBackground(Color.RED);
+		panel_4.setBounds(80, 51, 87, 377);
+		contentPane.add(panel_4);
+		
+		panel_5 = new Panel();
+		panel_5.setBackground(Color.RED);
+		panel_5.setBounds(181, 51, 87, 377);
+		contentPane.add(panel_5);
+		
+		panel_6 = new Panel();
+		panel_6.setBackground(Color.RED);
+		panel_6.setBounds(281, 51, 87, 377);
+		contentPane.add(panel_6);
+		
+		Panel panel_7 = new Panel();
+		panel_7.setBackground(Color.RED);
+		panel_7.setBounds(382, 51, 87, 377);
+		contentPane.add(panel_7);
+		
+	
+		
+		timer = new Timer(1000, new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
               lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
@@ -371,9 +420,70 @@ public class JuegoAritmetico extends JFrame {
 				} else {
 					elementos.chequeoDeResultados(3, 3, Integer.parseInt(textD4.getText()));
 				}
+				
+				elementos.actualizarEstado();
+				
+				ArrayList<Boolean> filasCompletas = elementos.filasCompletas();
+				
+				for(int i = 0; i < filasCompletas.size(); i++) {
+					if(i == 0 && filasCompletas.get(i) == true)
+						panel_0.setBackground(new Color(0, 255, 0));
+					
+					if(i == 0 && filasCompletas.get(i) == false)
+						panel_0.setBackground(new Color(255, 0, 0));
+					
+					if(i == 1 && filasCompletas.get(i) == true)
+						panel_1.setBackground(new Color(0, 255, 0));
+					
+					if(i == 1 && filasCompletas.get(i) == false)
+						panel_1.setBackground(new Color(255, 0, 0));
+					
+					if(i == 2 && filasCompletas.get(i) == true)
+						panel_2.setBackground(new Color(0, 255, 0));
+					
+					if(i == 2 && filasCompletas.get(i) == false)
+						panel_2.setBackground(new Color(255, 0, 0));
+					
+					if(i == 3 && filasCompletas.get(i) == true)
+						panel_3.setBackground(new Color(0, 255, 0));
+					
+					if(i == 3 && filasCompletas.get(i) == false)
+						panel_3.setBackground(new Color(255, 0, 0));
+				}
+				
+				ArrayList<Boolean> columnasCompletas = elementos.columnasCompletas();
+				
+				for(int i = 0; i < filasCompletas.size(); i++) {
+					if(i == 0 && columnasCompletas.get(i) == true)
+						panel_4.setBackground(new Color(0, 255, 0));
+					
+					if(i == 0 && columnasCompletas.get(i) == false)
+						panel_4.setBackground(new Color(255, 0, 0));
+					
+					if(i == 1 && columnasCompletas.get(i) == true)
+						panel_5.setBackground(new Color(0, 255, 0));
+					
+					if(i == 1 && columnasCompletas.get(i) == false)
+						panel_5.setBackground(new Color(255, 0, 0));
+					
+					if(i == 2 && columnasCompletas.get(i) == true)
+						panel_6.setBackground(new Color(0, 255, 0));
+					
+					if(i == 2 && columnasCompletas.get(i) == false)
+						panel_6.setBackground(new Color(255, 0, 0));
+					
+					if(i == 3 && columnasCompletas.get(i) == true)
+						panel_7.setBackground(new Color(0, 255, 0));
+					
+					if(i == 3 && columnasCompletas.get(i) == false)
+						panel_7.setBackground(new Color(255, 0, 0));
+				}
+				
+		
 				if (elementos.completoJuego()) {
 					dispose();
 					Fin fin = new Fin();
+					timer.stop();
 					fin.setVisible(true);
 				}
             }
