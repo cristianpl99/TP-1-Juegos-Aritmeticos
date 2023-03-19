@@ -5,12 +5,12 @@ import java.util.Random;
 
 public class ElementosJuego {
 	private int[][] mat;
-	private boolean[][] matrizChequeo;
 	private Random random;
 	private int[] filaResul;
 	private int[] columResul;
 	private boolean[] filasComp;
 	private boolean[] columnasComp;
+	
 
 	public ElementosJuego(int filas, int columnas) {
 		int mat[][] = new int[filas][columnas];
@@ -23,14 +23,14 @@ public class ElementosJuego {
 			}
 		}
 		this.mat = mat;
-		
+
 		filasComp = new boolean[filas];
-		for(int i = 0; i < filasComp.length; i++) {
+		for (int i = 0; i < filasComp.length; i++) {
 			filasComp[i] = false;
 		}
-			
+
 		columnasComp = new boolean[columnas];
-		for(int i = 0; i < columnasComp.length; i++) {
+		for (int i = 0; i < columnasComp.length; i++) {
 			columnasComp[i] = false;
 		}
 
@@ -45,6 +45,7 @@ public class ElementosJuego {
 			this.filaResul = filaResul;
 
 		}
+
 		int[] columResul = new int[columnas];
 		for (int c = 0; c < mat[0].length; c++) {
 			int sum = 0;
@@ -55,99 +56,82 @@ public class ElementosJuego {
 			sum = 0;
 			this.columResul = columResul;
 		}
-		boolean[][] matrizChequeo = new boolean[filas][columnas];
-		for (int fila = 0; fila < matrizChequeo.length; fila++) {
-			for (int col = 0; col < matrizChequeo[0].length; col++) {
-				{
-					matrizChequeo[fila][col] = false;
-				}
-			}
-		}
-		this.matrizChequeo = matrizChequeo;
-	}
 
-	public void chequeoDeResultados(int fila, int colum, int valor) {
-		if (this.mat[fila][colum] == valor) {
-			this.matrizChequeo[fila][colum] = true;
-		} else {
-			this.matrizChequeo[fila][colum] = false;
-		}
-	}
-	// aux de visualizacion
-		public boolean completoJuego() {
-			for (int fila = 0; fila < this.mat.length; fila++) {
-				for (int col = 0; col < mat[0].length; col++) {
-					if(this.matrizChequeo[fila][col] == false) {
-						return false;
-					}
-				}
-			}
-			return true;
-		}
-
-	// aux de visualizacion
-	public void imprimirMatriz() {
-		for (int fila = 0; fila < this.mat.length; fila++) {
+		for (int fila = 0; fila < mat.length; fila++) {
 			for (int col = 0; col < mat[0].length; col++) {
-				System.out.println(this.mat[fila][col]);
+				{
+					mat[fila][col] = 0;
+				}
 			}
 		}
 	}
 
-	// aux de visualizacion
-	public void imprimirMatrizBoolean() {
-		for (int fila = 0; fila < this.matrizChequeo.length; fila++) {
-			for (int col = 0; col < matrizChequeo[0].length; col++) {
-				System.out.println(this.matrizChequeo[fila][col]);
-			}
-		}
+	public void ingresoDeResultados(int fila, int colum, int valor) {
+		this.mat[fila][colum] = valor;
 	}
-	
-	//Nota de Jere: Hay que hacerle un test apropiado donde veamos que si las casillas son correctas y el boolean es false, actualiza los valores y viceversa
-	//sino no cambia los booleans
+
+	public boolean completoJuego() {
+		boolean acumComp = true;
+		for (int i = 0; i < filasComp.length; i++) {
+			acumComp = acumComp && filasComp[i];
+		}
+		for (int i = 0; i < columnasComp.length; i++) {
+			acumComp = acumComp && columnasComp[i];
+		}
+		return acumComp;
+	}
+
+	// Nota de Jere: Hay que hacerle un test apropiado donde veamos que si las
+	// casillas son correctas y el boolean es false, actualiza los valores y
+	// viceversa
+	// sino no cambia los booleans
 	public void actualizarEstado() {
 		actualizarFilas();
 		actualizarColumnas();
 	}
-	
+
 	private void actualizarColumnas() {
 		for (int col = 0; col < mat[0].length; col++) {
-			boolean casillasColum = true;
+			int suma = 0;
 			for (int fila = 0; fila < this.mat.length; fila++) {
-				casillasColum = casillasColum && matrizChequeo[fila][col];
+				suma = suma + mat[fila][col];
 			}
-			columnasComp[col] = casillasColum;
+			if (suma == columResul[col]) {
+				columnasComp[col] = true;
+			} else {
+				columnasComp[col] = false;
+			}
 		}
 	}
-	
+
 	private void actualizarFilas() {
-		for (int fila = 0; fila < this.mat.length; fila++) {
-			boolean casillasFila = true;
-			for (int col = 0; col < mat[0].length; col++) {
-				casillasFila = casillasFila && matrizChequeo[fila][col];
+		for (int fila = 0; fila < mat.length; fila++) {
+			int suma = 0;
+			for (int col = 0; col < this.mat[0].length; col++) {
+				suma = suma + mat[fila][col];
 			}
-			filasComp[fila] = casillasFila;
-		}	
+			if (suma == filaResul[fila]) {
+				filasComp[fila] = true;
+			} else {
+				filasComp[fila] = false;
+			}
+		}
 	}
-	
+
 	public ArrayList<Boolean> filasCompletas() {
 		ArrayList<Boolean> filasCompletas = new ArrayList<Boolean>();
-		for(int i = 0; i < filasComp.length; i++) {
+		for (int i = 0; i < filasComp.length; i++) {
 			filasCompletas.add(filasComp[i]);
 		}
 		return filasCompletas;
 	}
-	
+
 	public ArrayList<Boolean> columnasCompletas() {
 		ArrayList<Boolean> columnasCompletas = new ArrayList<Boolean>();
-		for(int i = 0; i < columnasComp.length; i++) {
+		for (int i = 0; i < columnasComp.length; i++) {
 			columnasCompletas.add(columnasComp[i]);
 		}
 		return columnasCompletas;
-	}
-
-	public int elemMat(int fila, int col) {
-		return this.mat[fila][col];
 	}
 
 	public int[] getColumResul() {
@@ -157,7 +141,16 @@ public class ElementosJuego {
 	public int[] getFilaResul() {
 		return filaResul;
 	}
-
 	
+	
+	
+	// aux de visualizacion
+		public void imprimirMatriz() {
+			for (int fila = 0; fila < this.mat.length; fila++) {
+				for (int col = 0; col < mat[0].length; col++) {
+					System.out.println(this.mat[fila][col]);
+				}
+			}
+		}
 
 }

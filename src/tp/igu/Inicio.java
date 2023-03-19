@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -17,32 +19,14 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import tp.logica.ElementosJuego;
+
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textNombre;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Inicio frame = new Inicio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public Inicio() {
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(Inicio.class.getResource("/icons/progress/ani/8.png")));
 		setTitle("Programacion III - Bienvenidos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 399);
@@ -60,10 +44,18 @@ public class Inicio extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		textNombre = new JTextField();
+		textNombre.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (textNombre.getText().trim().length() == 10) {
+					e.consume();
+				}
+			}
+		});
 		textNombre.setToolTipText("");
 		textNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		textNombre.setForeground(Color.GRAY);
-		textNombre.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		textNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
 		textNombre.setColumns(10);
 		textNombre.setBounds(152, 118, 258, 20);
 		contentPane.add(textNombre);
@@ -84,7 +76,9 @@ public class Inicio extends JFrame {
 		btnComenzar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				JuegoAritmetico juego = new JuegoAritmetico();
+				JuegoAritmetico juego = new JuegoAritmetico(textNombre.getText());
+				//juego.setNombre(textNombre.getText());
+				System.out.println(textNombre.getText());
 				juego.setVisible(true);
 			}
 		});
