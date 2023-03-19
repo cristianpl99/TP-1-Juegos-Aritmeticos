@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
 import tp.logica.ElementosJuego;
+import tp.logica.Controladora;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -71,7 +72,8 @@ public class JuegoAritmetico extends JFrame {
 		contentPane.setLayout(null);
 
 		// inicio una instancia del objeto elementosJuego
-		ElementosJuego elementos = new ElementosJuego(4, 4);
+		//ElementosJuego control = new ElementosJuego(4, 4);
+		Controladora control = new Controladora(4,4);
 
 		textA1 = new JTextField();
 		validarEntrada(textA1);
@@ -202,49 +204,49 @@ public class JuegoAritmetico extends JFrame {
 		textD4.setBounds(400, 369, 50, 43);
 		contentPane.add(textD4);
 
-		JLabel lblA = new JLabel(String.valueOf(elementos.getFilaResul()[0]));
+		JLabel lblA = new JLabel(String.valueOf(control.getFilaResul()[0]));
 		lblA.setHorizontalAlignment(SwingConstants.CENTER);
 		lblA.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblA.setBounds(498, 67, 46, 43);
 		contentPane.add(lblA);
 
-		JLabel lblB = new JLabel(String.valueOf(elementos.getFilaResul()[1]));
+		JLabel lblB = new JLabel(String.valueOf(control.getFilaResul()[1]));
 		lblB.setHorizontalAlignment(SwingConstants.CENTER);
 		lblB.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblB.setBounds(498, 170, 46, 43);
 		contentPane.add(lblB);
 
-		JLabel lblC = new JLabel(String.valueOf(elementos.getFilaResul()[2]));
+		JLabel lblC = new JLabel(String.valueOf(control.getFilaResul()[2]));
 		lblC.setHorizontalAlignment(SwingConstants.CENTER);
 		lblC.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblC.setBounds(498, 269, 46, 43);
 		contentPane.add(lblC);
 
-		JLabel lblD = new JLabel(String.valueOf(elementos.getFilaResul()[3]));
+		JLabel lblD = new JLabel(String.valueOf(control.getFilaResul()[3]));
 		lblD.setHorizontalAlignment(SwingConstants.CENTER);
 		lblD.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblD.setBounds(498, 369, 46, 43);
 		contentPane.add(lblD);
 
-		JLabel lbl1 = new JLabel(String.valueOf(elementos.getColumResul()[0]));
+		JLabel lbl1 = new JLabel(String.valueOf(control.getColumResul()[0]));
 		lbl1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl1.setBounds(101, 463, 46, 43);
 		contentPane.add(lbl1);
 
-		JLabel lbl2 = new JLabel(String.valueOf(elementos.getColumResul()[1]));
+		JLabel lbl2 = new JLabel(String.valueOf(control.getColumResul()[1]));
 		lbl2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl2.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl2.setBounds(204, 463, 46, 43);
 		contentPane.add(lbl2);
 
-		JLabel lbl3 = new JLabel(String.valueOf(elementos.getColumResul()[2]));
+		JLabel lbl3 = new JLabel(String.valueOf(control.getColumResul()[2]));
 		lbl3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl3.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl3.setBounds(304, 463, 46, 43);
 		contentPane.add(lbl3);
 
-		JLabel lbl4 = new JLabel(String.valueOf(elementos.getColumResul()[3]));
+		JLabel lbl4 = new JLabel(String.valueOf(control.getColumResul()[3]));
 		lbl4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl4.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl4.setBounds(404, 463, 46, 43);
@@ -323,104 +325,104 @@ public class JuegoAritmetico extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
 				if (textA1.getText().equals("")) {
-					elementos.ingresoDeResultados(0, 0, 0);
+					control.ingresoDeResultados(0, 0, 0);
 				} else {
-					elementos.ingresoDeResultados(0, 0, Integer.parseInt(textA1.getText()));
+					control.ingresoDeResultados(0, 0, Integer.parseInt(textA1.getText()));
 				}
 
 				if (textA2.getText().equals("")) {
-					elementos.ingresoDeResultados(0, 1, 0);
+					control.ingresoDeResultados(0, 1, 0);
 				} else {
-					elementos.ingresoDeResultados(0, 1, Integer.parseInt(textA2.getText()));
+					control.ingresoDeResultados(0, 1, Integer.parseInt(textA2.getText()));
 				}
 
 				if (textA3.getText().equals("")) {
-					elementos.ingresoDeResultados(0, 2, 0);
+					control.ingresoDeResultados(0, 2, 0);
 				} else {
-					elementos.ingresoDeResultados(0, 2, Integer.parseInt(textA3.getText()));
+					control.ingresoDeResultados(0, 2, Integer.parseInt(textA3.getText()));
 				}
 
 				if (textA4.getText().equals("")) {
-					elementos.ingresoDeResultados(0, 3, 0);
+					control.ingresoDeResultados(0, 3, 0);
 				} else {
-					elementos.ingresoDeResultados(0, 3, Integer.parseInt(textA4.getText()));
+					control.ingresoDeResultados(0, 3, Integer.parseInt(textA4.getText()));
 				}
 
 				if (textB1.getText().equals("")) {
-					elementos.ingresoDeResultados(1, 0, 0);
+					control.ingresoDeResultados(1, 0, 0);
 				} else {
-					elementos.ingresoDeResultados(1, 0, Integer.parseInt(textB1.getText()));
+					control.ingresoDeResultados(1, 0, Integer.parseInt(textB1.getText()));
 				}
 
 				if (textB2.getText().equals("")) {
-					elementos.ingresoDeResultados(1, 1, 0);
+					control.ingresoDeResultados(1, 1, 0);
 				} else {
-					elementos.ingresoDeResultados(1, 1, Integer.parseInt(textB2.getText()));
+					control.ingresoDeResultados(1, 1, Integer.parseInt(textB2.getText()));
 				}
 
 				if (textB3.getText().equals("")) {
-					elementos.ingresoDeResultados(1, 2, 0);
+					control.ingresoDeResultados(1, 2, 0);
 				} else {
-					elementos.ingresoDeResultados(1, 2, Integer.parseInt(textB3.getText()));
+					control.ingresoDeResultados(1, 2, Integer.parseInt(textB3.getText()));
 				}
 
 				if (textB4.getText().equals("")) {
-					elementos.ingresoDeResultados(1, 3, 0);
+					control.ingresoDeResultados(1, 3, 0);
 				} else {
-					elementos.ingresoDeResultados(1, 3, Integer.parseInt(textB4.getText()));
+					control.ingresoDeResultados(1, 3, Integer.parseInt(textB4.getText()));
 				}
 
 				if (textC1.getText().equals("")) {
-					elementos.ingresoDeResultados(2, 0, 0);
+					control.ingresoDeResultados(2, 0, 0);
 				} else {
-					elementos.ingresoDeResultados(2, 0, Integer.parseInt(textC1.getText()));
+					control.ingresoDeResultados(2, 0, Integer.parseInt(textC1.getText()));
 				}
 
 				if (textC2.getText().equals("")) {
-					elementos.ingresoDeResultados(2, 1, 0);
+					control.ingresoDeResultados(2, 1, 0);
 				} else {
-					elementos.ingresoDeResultados(2, 1, Integer.parseInt(textC2.getText()));
+					control.ingresoDeResultados(2, 1, Integer.parseInt(textC2.getText()));
 				}
 
 				if (textC3.getText().equals("")) {
-					elementos.ingresoDeResultados(2, 2, 0);
+					control.ingresoDeResultados(2, 2, 0);
 				} else {
-					elementos.ingresoDeResultados(2, 2, Integer.parseInt(textC3.getText()));
+					control.ingresoDeResultados(2, 2, Integer.parseInt(textC3.getText()));
 				}
 
 				if (textC4.getText().equals("")) {
-					elementos.ingresoDeResultados(2, 3, 0);
+					control.ingresoDeResultados(2, 3, 0);
 				} else {
-					elementos.ingresoDeResultados(2, 3, Integer.parseInt(textC4.getText()));
+					control.ingresoDeResultados(2, 3, Integer.parseInt(textC4.getText()));
 				}
 
 				if (textD1.getText().equals("")) {
-					elementos.ingresoDeResultados(3, 0, 0);
+					control.ingresoDeResultados(3, 0, 0);
 				} else {
-					elementos.ingresoDeResultados(3, 0, Integer.parseInt(textD1.getText()));
+					control.ingresoDeResultados(3, 0, Integer.parseInt(textD1.getText()));
 				}
 
 				if (textD2.getText().equals("")) {
-					elementos.ingresoDeResultados(3, 1, 0);
+					control.ingresoDeResultados(3, 1, 0);
 				} else {
-					elementos.ingresoDeResultados(3, 1, Integer.parseInt(textD2.getText()));
+					control.ingresoDeResultados(3, 1, Integer.parseInt(textD2.getText()));
 				}
 
 				if (textD3.getText().equals("")) {
-					elementos.ingresoDeResultados(3, 2, 0);
+					control.ingresoDeResultados(3, 2, 0);
 				} else {
-					elementos.ingresoDeResultados(3, 2, Integer.parseInt(textD3.getText()));
+					control.ingresoDeResultados(3, 2, Integer.parseInt(textD3.getText()));
 				}
 
 				if (textD4.getText().equals("")) {
-					elementos.ingresoDeResultados(3, 3, 0);
+					control.ingresoDeResultados(3, 3, 0);
 				} else {
-					elementos.ingresoDeResultados(3, 3, Integer.parseInt(textD4.getText()));
+					control.ingresoDeResultados(3, 3, Integer.parseInt(textD4.getText()));
 				}
 
-				elementos.actualizarEstado();
+				control.actualizarEstado();
 
-				ArrayList<Boolean> filasCompletas = elementos.filasCompletas();
+				ArrayList<Boolean> filasCompletas = control.filasCompletas();
 
 				for (int i = 0; i < filasCompletas.size(); i++) {
 					if (i == 0 && filasCompletas.get(i) == true)
@@ -448,7 +450,7 @@ public class JuegoAritmetico extends JFrame {
 						panel_3.setBackground(new Color(255, 0, 0));
 				}
 
-				ArrayList<Boolean> columnasCompletas = elementos.columnasCompletas();
+				ArrayList<Boolean> columnasCompletas = control.columnasCompletas();
 
 				for (int i = 0; i < filasCompletas.size(); i++) {
 					if (i == 0 && columnasCompletas.get(i) == true)
@@ -476,7 +478,7 @@ public class JuegoAritmetico extends JFrame {
 						panel_7.setBackground(new Color(255, 0, 0));
 				}
 
-				if (elementos.completoJuego()) {
+				if (control.completoJuego()) {
 					dispose();
 					Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText())) ;
 					timer.stop();
