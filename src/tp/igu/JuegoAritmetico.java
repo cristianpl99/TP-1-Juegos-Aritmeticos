@@ -74,7 +74,6 @@ public class JuegoAritmetico extends JFrame {
 		// inicio una instancia del objeto elementosJuego
 		//ElementosJuego control = new ElementosJuego(4, 4);
 		Controladora control = new Controladora(4,4);
-		control.imprimirMatriz();
 
 		textA1 = new JTextField();
 		validarEntrada(textA1);
@@ -320,6 +319,7 @@ public class JuegoAritmetico extends JFrame {
 		btnCheat.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCheat.setBounds(494, 463, 89, 23);
 		contentPane.add(btnCheat);
+		
 
 		timer = new Timer(1000, new ActionListener() {
 			@Override
@@ -412,20 +412,19 @@ public class JuegoAritmetico extends JFrame {
 	}
 
 
-	private void validarEntrada(JTextField textA1) {
-		textA1.addKeyListener(new KeyAdapter() {
+	private void validarEntrada(JTextField jText) {
+		jText.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				int key = e.getKeyChar();
 				boolean numeros = key >= 48 && key <= 57;
 
-				if (!numeros) {
+				if (!numeros || jText.getText().trim().length() == 2) {
 					e.consume();
 				}
-
-				if (key < 0 && e.getKeyChar() > 30 || textA1.getText().trim().length() == 2) {
+				if (key == 48 && jText.getText().trim().length() == 0) {
 					e.consume();
-				}
+			}
 			}
 		});
 
