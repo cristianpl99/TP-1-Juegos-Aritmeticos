@@ -2,7 +2,7 @@ import tp.igu.Inicio;
 
 public class Main {
 	
-	//aprendi a usar git mierdas
+	//aprendi a usar git mierdas jajaj
 
 	public static void main(String[] args) {
 		Inicio inicio = new Inicio();
