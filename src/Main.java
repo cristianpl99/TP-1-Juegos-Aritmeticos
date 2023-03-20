@@ -1,8 +1,6 @@
 import tp.igu.Inicio;
 
 public class Main {
-	
-	// aprendi locoooo
 
 	public static void main(String[] args) {
 		Inicio inicio = new Inicio();
