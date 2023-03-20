@@ -408,22 +408,24 @@ public class JuegoAritmetico extends JFrame {
 		timer.start();
 	}
 
-	private void validarEntrada(JTextField textA1) {
-		textA1.addKeyListener(new KeyAdapter() {
+	private void validarEntrada(JTextField jText) {
+		jText.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				int key = e.getKeyChar();
 				boolean numeros = key >= 48 && key <= 57;
 
-				if (!numeros) {
+				if (!numeros || jText.getText().trim().length() == 2) {
 					e.consume();
 				}
-
-				if (key < 0 && e.getKeyChar() > 30 || textA1.getText().trim().length() == 2) {
-					e.consume();
-				}
+				if (key == 48 && jText.getText().trim().length() == 0) {
+					
+						e.consume();
+				
+			}
 			}
 		});
+
 	}
 
 }

@@ -87,5 +87,6 @@ public class Controladora {
 	public int[] getFilaResul() {
 		return juego.filaResul;
 	}
-
+	
+	
 }
