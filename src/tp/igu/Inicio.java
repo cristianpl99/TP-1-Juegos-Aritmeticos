@@ -25,7 +25,7 @@ public class Inicio extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textNombre;
-	
+
 	public Inicio() {
 		setTitle("Programacion III - Bienvenidos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,8 +77,6 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				JuegoAritmetico juego = new JuegoAritmetico(textNombre.getText());
-				//juego.setNombre(textNombre.getText());
-				System.out.println(textNombre.getText());
 				juego.setVisible(true);
 			}
 		});

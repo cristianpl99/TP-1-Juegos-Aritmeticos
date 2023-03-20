@@ -48,17 +48,17 @@ public class JuegoAritmetico extends JFrame {
 	private JTextField textD4;
 
 	private Timer timer = null;
-	
+
+	private Panel panel_0;
 	private Panel panel_1;
 	private Panel panel_2;
 	private Panel panel_3;
 	private Panel panel_5;
 	private Panel panel_6;
 	private Panel panel_4;
-
+	private Panel panel_7;
 
 	public JuegoAritmetico(String nombre) {
-		System.out.println(nombre);
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,13 +71,11 @@ public class JuegoAritmetico extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// inicio una instancia del objeto elementosJuego
-		//ElementosJuego control = new ElementosJuego(4, 4);
-		Controladora control = new Controladora(4,4);
+		// inicio una instancia del objeto Controladora
+		Controladora control = new Controladora(4, 4);
 
 		textA1 = new JTextField();
 		validarEntrada(textA1);
-		
 		textA1.setHorizontalAlignment(SwingConstants.CENTER);
 		textA1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		textA1.setBounds(101, 69, 50, 43);
@@ -265,7 +263,7 @@ public class JuegoAritmetico extends JFrame {
 		lblTiempo.setBounds(142, 12, 123, 33);
 		contentPane.add(lblTiempo);
 
-		Panel panel_0 = new Panel();
+		panel_0 = new Panel();
 		panel_0.setBackground(new Color(255, 0, 0));
 		panel_0.setBounds(80, 51, 388, 76);
 		contentPane.add(panel_0);
@@ -300,18 +298,18 @@ public class JuegoAritmetico extends JFrame {
 		panel_6.setBounds(281, 51, 87, 377);
 		contentPane.add(panel_6);
 
-		Panel panel_7 = new Panel();
+		panel_7 = new Panel();
 		panel_7.setBackground(Color.RED);
 		panel_7.setBounds(382, 51, 87, 377);
 		contentPane.add(panel_7);
-		
-		//Aux para ver el fin
+
+		// Aux para ver el fin
 		JButton btnCheat = new JButton("CHEAT");
 		btnCheat.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText())) ;
+				Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText()));
 				timer.stop();
 				fin.setVisible(true);
 			}
@@ -319,13 +317,12 @@ public class JuegoAritmetico extends JFrame {
 		btnCheat.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCheat.setBounds(494, 463, 89, 23);
 		contentPane.add(btnCheat);
-		
 
 		timer = new Timer(1000, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
-				
+
 				control.ingresoDeResultados(0, 0, textA1.getText().equals("") ? 0 : Integer.parseInt(textA1.getText()));
 				control.ingresoDeResultados(0, 1, textA2.getText().equals("") ? 0 : Integer.parseInt(textA2.getText()));
 				control.ingresoDeResultados(0, 2, textA3.getText().equals("") ? 0 : Integer.parseInt(textA3.getText()));
@@ -402,7 +399,7 @@ public class JuegoAritmetico extends JFrame {
 
 				if (control.completoJuego()) {
 					dispose();
-					Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText())) ;
+					Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText()));
 					timer.stop();
 					fin.setVisible(true);
 				}
@@ -411,27 +408,22 @@ public class JuegoAritmetico extends JFrame {
 		timer.start();
 	}
 
-
-	private void validarEntrada(JTextField jText) {
-		jText.addKeyListener(new KeyAdapter() {
+	private void validarEntrada(JTextField textA1) {
+		textA1.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				int key = e.getKeyChar();
 				boolean numeros = key >= 48 && key <= 57;
 
-				if (!numeros || jText.getText().trim().length() == 2) {
+				if (!numeros) {
 					e.consume();
 				}
-				if (key == 48 && jText.getText().trim().length() == 0) {
+
+				if (key < 0 && e.getKeyChar() > 30 || textA1.getText().trim().length() == 2) {
 					e.consume();
-			}
+				}
 			}
 		});
-
 	}
-
-
-	
-	
 
 }

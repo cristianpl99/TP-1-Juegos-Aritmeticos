@@ -3,14 +3,14 @@ package tp.logica;
 import java.util.ArrayList;
 
 public class Controladora {
-	
+
 	private ElementosJuego juego;
 
 	public Controladora(int filas, int columnas) {
-		ElementosJuego juego = new ElementosJuego(filas, columnas);	
+		ElementosJuego juego = new ElementosJuego(filas, columnas);
 		this.juego = juego;
 	}
-	
+
 	public void ingresoDeResultados(int fila, int colum, int valor) {
 		juego.mat[fila][colum] = valor;
 	}
@@ -79,6 +79,7 @@ public class Controladora {
 		return columnasCompletas;
 	}
 
+	// cambiar getters por iterators
 	public int[] getColumResul() {
 		return juego.columResul;
 	}
@@ -86,13 +87,5 @@ public class Controladora {
 	public int[] getFilaResul() {
 		return juego.filaResul;
 	}
-	// aux de visualizacion
-		public void imprimirMatriz() {
-			for (int fila = 0; fila < juego.mat.length; fila++) {
-				for (int col = 0; col < juego.mat[0].length; col++) {
-					System.out.println(juego.mat[fila][col]);
-				}
-			}
-		}
 
 }

@@ -28,22 +28,22 @@ public class Fin extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblGanaste = new JLabel("GANASTE");
 		lblGanaste.setForeground(new Color(255, 0, 0));
 		lblGanaste.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGanaste.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblGanaste.setBounds(132, 83, 165, 30);
 		contentPane.add(lblGanaste);
-		
+
 		JLabel lblNombre = new JLabel(nombre);
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNombre.setBounds(122, 42, 191, 30);
 		lblNombre.setText(nombre);
 		contentPane.add(lblNombre);
-		
-		JLabel lblTiempo = new JLabel("TU TIEMPO FUE DE " + tiempo + " segundos");
+
+		JLabel lblTiempo = new JLabel("TU TIEMPO FUE DE " + tiempo + " SEGUNDOS");
 		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 21));
 		lblTiempo.setBounds(0, 160, 424, 30);
