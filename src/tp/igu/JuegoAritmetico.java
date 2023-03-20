@@ -74,6 +74,7 @@ public class JuegoAritmetico extends JFrame {
 		// inicio una instancia del objeto elementosJuego
 		//ElementosJuego control = new ElementosJuego(4, 4);
 		Controladora control = new Controladora(4,4);
+		control.imprimirMatriz();
 
 		textA1 = new JTextField();
 		validarEntrada(textA1);
@@ -324,102 +325,23 @@ public class JuegoAritmetico extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
-				if (textA1.getText().equals("")) {
-					control.ingresoDeResultados(0, 0, 0);
-				} else {
-					control.ingresoDeResultados(0, 0, Integer.parseInt(textA1.getText()));
-				}
-
-				if (textA2.getText().equals("")) {
-					control.ingresoDeResultados(0, 1, 0);
-				} else {
-					control.ingresoDeResultados(0, 1, Integer.parseInt(textA2.getText()));
-				}
-
-				if (textA3.getText().equals("")) {
-					control.ingresoDeResultados(0, 2, 0);
-				} else {
-					control.ingresoDeResultados(0, 2, Integer.parseInt(textA3.getText()));
-				}
-
-				if (textA4.getText().equals("")) {
-					control.ingresoDeResultados(0, 3, 0);
-				} else {
-					control.ingresoDeResultados(0, 3, Integer.parseInt(textA4.getText()));
-				}
-
-				if (textB1.getText().equals("")) {
-					control.ingresoDeResultados(1, 0, 0);
-				} else {
-					control.ingresoDeResultados(1, 0, Integer.parseInt(textB1.getText()));
-				}
-
-				if (textB2.getText().equals("")) {
-					control.ingresoDeResultados(1, 1, 0);
-				} else {
-					control.ingresoDeResultados(1, 1, Integer.parseInt(textB2.getText()));
-				}
-
-				if (textB3.getText().equals("")) {
-					control.ingresoDeResultados(1, 2, 0);
-				} else {
-					control.ingresoDeResultados(1, 2, Integer.parseInt(textB3.getText()));
-				}
-
-				if (textB4.getText().equals("")) {
-					control.ingresoDeResultados(1, 3, 0);
-				} else {
-					control.ingresoDeResultados(1, 3, Integer.parseInt(textB4.getText()));
-				}
-
-				if (textC1.getText().equals("")) {
-					control.ingresoDeResultados(2, 0, 0);
-				} else {
-					control.ingresoDeResultados(2, 0, Integer.parseInt(textC1.getText()));
-				}
-
-				if (textC2.getText().equals("")) {
-					control.ingresoDeResultados(2, 1, 0);
-				} else {
-					control.ingresoDeResultados(2, 1, Integer.parseInt(textC2.getText()));
-				}
-
-				if (textC3.getText().equals("")) {
-					control.ingresoDeResultados(2, 2, 0);
-				} else {
-					control.ingresoDeResultados(2, 2, Integer.parseInt(textC3.getText()));
-				}
-
-				if (textC4.getText().equals("")) {
-					control.ingresoDeResultados(2, 3, 0);
-				} else {
-					control.ingresoDeResultados(2, 3, Integer.parseInt(textC4.getText()));
-				}
-
-				if (textD1.getText().equals("")) {
-					control.ingresoDeResultados(3, 0, 0);
-				} else {
-					control.ingresoDeResultados(3, 0, Integer.parseInt(textD1.getText()));
-				}
-
-				if (textD2.getText().equals("")) {
-					control.ingresoDeResultados(3, 1, 0);
-				} else {
-					control.ingresoDeResultados(3, 1, Integer.parseInt(textD2.getText()));
-				}
-
-				if (textD3.getText().equals("")) {
-					control.ingresoDeResultados(3, 2, 0);
-				} else {
-					control.ingresoDeResultados(3, 2, Integer.parseInt(textD3.getText()));
-				}
-
-				if (textD4.getText().equals("")) {
-					control.ingresoDeResultados(3, 3, 0);
-				} else {
-					control.ingresoDeResultados(3, 3, Integer.parseInt(textD4.getText()));
-				}
-
+				
+				control.ingresoDeResultados(0, 0, textA1.getText().equals("") ? 0 : Integer.parseInt(textA1.getText()));
+				control.ingresoDeResultados(0, 1, textA2.getText().equals("") ? 0 : Integer.parseInt(textA2.getText()));
+				control.ingresoDeResultados(0, 2, textA3.getText().equals("") ? 0 : Integer.parseInt(textA3.getText()));
+				control.ingresoDeResultados(0, 3, textA4.getText().equals("") ? 0 : Integer.parseInt(textA4.getText()));
+				control.ingresoDeResultados(1, 0, textB1.getText().equals("") ? 0 : Integer.parseInt(textB1.getText()));
+				control.ingresoDeResultados(1, 1, textB2.getText().equals("") ? 0 : Integer.parseInt(textB2.getText()));
+				control.ingresoDeResultados(1, 2, textB3.getText().equals("") ? 0 : Integer.parseInt(textB3.getText()));
+				control.ingresoDeResultados(1, 3, textB4.getText().equals("") ? 0 : Integer.parseInt(textB4.getText()));
+				control.ingresoDeResultados(2, 0, textC1.getText().equals("") ? 0 : Integer.parseInt(textC1.getText()));
+				control.ingresoDeResultados(2, 1, textC2.getText().equals("") ? 0 : Integer.parseInt(textC2.getText()));
+				control.ingresoDeResultados(2, 2, textC3.getText().equals("") ? 0 : Integer.parseInt(textC3.getText()));
+				control.ingresoDeResultados(2, 3, textC4.getText().equals("") ? 0 : Integer.parseInt(textC4.getText()));
+				control.ingresoDeResultados(3, 0, textD1.getText().equals("") ? 0 : Integer.parseInt(textD1.getText()));
+				control.ingresoDeResultados(3, 1, textD2.getText().equals("") ? 0 : Integer.parseInt(textD2.getText()));
+				control.ingresoDeResultados(3, 2, textD3.getText().equals("") ? 0 : Integer.parseInt(textD3.getText()));
+				control.ingresoDeResultados(3, 3, textD4.getText().equals("") ? 0 : Integer.parseInt(textD4.getText()));
 				control.actualizarEstado();
 
 				ArrayList<Boolean> filasCompletas = control.filasCompletas();

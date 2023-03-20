@@ -1,6 +1,5 @@
 package tp.logica;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class ElementosJuego {
@@ -11,7 +10,6 @@ public class ElementosJuego {
 	boolean[] filasComp;
 	boolean[] columnasComp;
 	
-
 	public ElementosJuego(int filas, int columnas) {
 		int mat[][] = new int[filas][columnas];
 		random = new Random(System.currentTimeMillis());
