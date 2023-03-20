@@ -27,25 +27,25 @@ import java.awt.Panel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class JuegoAritmetico extends JFrame {
+public class JuegoAritmeticoLvl1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textA1;
-	private JTextField textA2;
-	private JTextField textA3;
-	private JTextField textA4;
-	private JTextField textB1;
-	private JTextField textB2;
-	private JTextField textB3;
-	private JTextField textB4;
-	private JTextField textC1;
-	private JTextField textC2;
-	private JTextField textC3;
-	private JTextField textC4;
-	private JTextField textD1;
-	private JTextField textD2;
-	private JTextField textD3;
-	private JTextField textD4;
+	private JTextField text1;
+	private JTextField text2;
+	private JTextField text3;
+	private JTextField text4;
+	private JTextField text5;
+	private JTextField text6;
+	private JTextField text7;
+	private JTextField text8;
+	private JTextField text9;
+	private JTextField text10;
+	private JTextField text11;
+	private JTextField text12;
+	private JTextField text13;
+	private JTextField text14;
+	private JTextField text15;
+	private JTextField text16;
 
 	private Timer timer = null;
 
@@ -58,7 +58,7 @@ public class JuegoAritmetico extends JFrame {
 	private Panel panel_4;
 	private Panel panel_7;
 
-	public JuegoAritmetico(String nombre) {
+	public JuegoAritmeticoLvl1(String nombre) {
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,133 +74,133 @@ public class JuegoAritmetico extends JFrame {
 		// inicio una instancia del objeto Controladora
 		Controladora control = new Controladora(4, 4);
 
-		textA1 = new JTextField();
-		validarEntrada(textA1);
-		textA1.setHorizontalAlignment(SwingConstants.CENTER);
-		textA1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textA1.setBounds(101, 69, 50, 43);
-		contentPane.add(textA1);
-		textA1.setColumns(10);
+		text1 = new JTextField();
+		validarEntrada(text1);
+		text1.setHorizontalAlignment(SwingConstants.CENTER);
+		text1.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text1.setBounds(101, 69, 50, 43);
+		contentPane.add(text1);
+		text1.setColumns(10);
 
-		textA2 = new JTextField();
-		validarEntrada(textA2);
-		textA2.setHorizontalAlignment(SwingConstants.CENTER);
-		textA2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textA2.setColumns(10);
-		textA2.setBounds(200, 69, 50, 43);
-		contentPane.add(textA2);
+		text2 = new JTextField();
+		validarEntrada(text2);
+		text2.setHorizontalAlignment(SwingConstants.CENTER);
+		text2.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text2.setColumns(10);
+		text2.setBounds(200, 69, 50, 43);
+		contentPane.add(text2);
 
-		textA3 = new JTextField();
-		validarEntrada(textA3);
-		textA3.setHorizontalAlignment(SwingConstants.CENTER);
-		textA3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textA3.setColumns(10);
-		textA3.setBounds(300, 69, 50, 43);
-		contentPane.add(textA3);
+		text3 = new JTextField();
+		validarEntrada(text3);
+		text3.setHorizontalAlignment(SwingConstants.CENTER);
+		text3.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text3.setColumns(10);
+		text3.setBounds(300, 69, 50, 43);
+		contentPane.add(text3);
 
-		textA4 = new JTextField();
-		validarEntrada(textA4);
-		textA4.setHorizontalAlignment(SwingConstants.CENTER);
-		textA4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textA4.setColumns(10);
-		textA4.setBounds(400, 69, 50, 43);
-		contentPane.add(textA4);
+		text4 = new JTextField();
+		validarEntrada(text4);
+		text4.setHorizontalAlignment(SwingConstants.CENTER);
+		text4.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text4.setColumns(10);
+		text4.setBounds(400, 69, 50, 43);
+		contentPane.add(text4);
 
-		textB1 = new JTextField();
-		validarEntrada(textB1);
-		textB1.setHorizontalAlignment(SwingConstants.CENTER);
-		textB1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textB1.setColumns(10);
-		textB1.setBounds(101, 170, 50, 43);
-		contentPane.add(textB1);
+		text5 = new JTextField();
+		validarEntrada(text5);
+		text5.setHorizontalAlignment(SwingConstants.CENTER);
+		text5.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text5.setColumns(10);
+		text5.setBounds(101, 170, 50, 43);
+		contentPane.add(text5);
 
-		textB2 = new JTextField();
-		validarEntrada(textB2);
-		textB2.setHorizontalAlignment(SwingConstants.CENTER);
-		textB2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textB2.setColumns(10);
-		textB2.setBounds(200, 170, 50, 43);
-		contentPane.add(textB2);
+		text6 = new JTextField();
+		validarEntrada(text6);
+		text6.setHorizontalAlignment(SwingConstants.CENTER);
+		text6.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text6.setColumns(10);
+		text6.setBounds(200, 170, 50, 43);
+		contentPane.add(text6);
 
-		textB3 = new JTextField();
-		validarEntrada(textB3);
-		textB3.setHorizontalAlignment(SwingConstants.CENTER);
-		textB3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textB3.setColumns(10);
-		textB3.setBounds(300, 170, 50, 43);
-		contentPane.add(textB3);
+		text7 = new JTextField();
+		validarEntrada(text7);
+		text7.setHorizontalAlignment(SwingConstants.CENTER);
+		text7.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text7.setColumns(10);
+		text7.setBounds(300, 170, 50, 43);
+		contentPane.add(text7);
 
-		textB4 = new JTextField();
-		validarEntrada(textB4);
-		textB4.setHorizontalAlignment(SwingConstants.CENTER);
-		textB4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textB4.setColumns(10);
-		textB4.setBounds(400, 170, 50, 43);
-		contentPane.add(textB4);
+		text8 = new JTextField();
+		validarEntrada(text8);
+		text8.setHorizontalAlignment(SwingConstants.CENTER);
+		text8.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text8.setColumns(10);
+		text8.setBounds(400, 170, 50, 43);
+		contentPane.add(text8);
 
-		textC1 = new JTextField();
-		validarEntrada(textC1);
-		textC1.setHorizontalAlignment(SwingConstants.CENTER);
-		textC1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textC1.setColumns(10);
-		textC1.setBounds(101, 269, 50, 43);
-		contentPane.add(textC1);
+		text9 = new JTextField();
+		validarEntrada(text9);
+		text9.setHorizontalAlignment(SwingConstants.CENTER);
+		text9.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text9.setColumns(10);
+		text9.setBounds(101, 269, 50, 43);
+		contentPane.add(text9);
 
-		textC2 = new JTextField();
-		validarEntrada(textC2);
-		textC2.setHorizontalAlignment(SwingConstants.CENTER);
-		textC2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textC2.setColumns(10);
-		textC2.setBounds(200, 269, 50, 43);
-		contentPane.add(textC2);
+		text10 = new JTextField();
+		validarEntrada(text10);
+		text10.setHorizontalAlignment(SwingConstants.CENTER);
+		text10.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text10.setColumns(10);
+		text10.setBounds(200, 269, 50, 43);
+		contentPane.add(text10);
 
-		textC3 = new JTextField();
-		validarEntrada(textC3);
-		textC3.setHorizontalAlignment(SwingConstants.CENTER);
-		textC3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textC3.setColumns(10);
-		textC3.setBounds(300, 269, 50, 43);
-		contentPane.add(textC3);
+		text11 = new JTextField();
+		validarEntrada(text11);
+		text11.setHorizontalAlignment(SwingConstants.CENTER);
+		text11.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text11.setColumns(10);
+		text11.setBounds(300, 269, 50, 43);
+		contentPane.add(text11);
 
-		textC4 = new JTextField();
-		validarEntrada(textC4);
-		textC4.setHorizontalAlignment(SwingConstants.CENTER);
-		textC4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textC4.setColumns(10);
-		textC4.setBounds(400, 269, 50, 43);
-		contentPane.add(textC4);
+		text12 = new JTextField();
+		validarEntrada(text12);
+		text12.setHorizontalAlignment(SwingConstants.CENTER);
+		text12.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text12.setColumns(10);
+		text12.setBounds(400, 269, 50, 43);
+		contentPane.add(text12);
 
-		textD1 = new JTextField();
-		validarEntrada(textD1);
-		textD1.setHorizontalAlignment(SwingConstants.CENTER);
-		textD1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textD1.setColumns(10);
-		textD1.setBounds(101, 369, 50, 43);
-		contentPane.add(textD1);
+		text13 = new JTextField();
+		validarEntrada(text13);
+		text13.setHorizontalAlignment(SwingConstants.CENTER);
+		text13.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text13.setColumns(10);
+		text13.setBounds(101, 369, 50, 43);
+		contentPane.add(text13);
 
-		textD2 = new JTextField();
-		validarEntrada(textD2);
-		textD2.setHorizontalAlignment(SwingConstants.CENTER);
-		textD2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textD2.setColumns(10);
-		textD2.setBounds(200, 369, 50, 43);
-		contentPane.add(textD2);
+		text14 = new JTextField();
+		validarEntrada(text14);
+		text14.setHorizontalAlignment(SwingConstants.CENTER);
+		text14.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text14.setColumns(10);
+		text14.setBounds(200, 369, 50, 43);
+		contentPane.add(text14);
 
-		textD3 = new JTextField();
-		validarEntrada(textD3);
-		textD3.setHorizontalAlignment(SwingConstants.CENTER);
-		textD3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textD3.setColumns(10);
-		textD3.setBounds(300, 369, 50, 43);
-		contentPane.add(textD3);
+		text15 = new JTextField();
+		validarEntrada(text15);
+		text15.setHorizontalAlignment(SwingConstants.CENTER);
+		text15.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text15.setColumns(10);
+		text15.setBounds(300, 369, 50, 43);
+		contentPane.add(text15);
 
-		textD4 = new JTextField();
-		validarEntrada(textD4);
-		textD4.setHorizontalAlignment(SwingConstants.CENTER);
-		textD4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		textD4.setColumns(10);
-		textD4.setBounds(400, 369, 50, 43);
-		contentPane.add(textD4);
+		text16 = new JTextField();
+		validarEntrada(text16);
+		text16.setHorizontalAlignment(SwingConstants.CENTER);
+		text16.setFont(new Font("Tahoma", Font.BOLD, 25));
+		text16.setColumns(10);
+		text16.setBounds(400, 369, 50, 43);
+		contentPane.add(text16);
 
 		JLabel lblA = new JLabel(String.valueOf(control.getFilaResul()[0]));
 		lblA.setHorizontalAlignment(SwingConstants.CENTER);
@@ -322,23 +322,32 @@ public class JuegoAritmetico extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
-
-				control.ingresoDeResultados(0, 0, textA1.getText().equals("") ? 0 : Integer.parseInt(textA1.getText()));
-				control.ingresoDeResultados(0, 1, textA2.getText().equals("") ? 0 : Integer.parseInt(textA2.getText()));
-				control.ingresoDeResultados(0, 2, textA3.getText().equals("") ? 0 : Integer.parseInt(textA3.getText()));
-				control.ingresoDeResultados(0, 3, textA4.getText().equals("") ? 0 : Integer.parseInt(textA4.getText()));
-				control.ingresoDeResultados(1, 0, textB1.getText().equals("") ? 0 : Integer.parseInt(textB1.getText()));
-				control.ingresoDeResultados(1, 1, textB2.getText().equals("") ? 0 : Integer.parseInt(textB2.getText()));
-				control.ingresoDeResultados(1, 2, textB3.getText().equals("") ? 0 : Integer.parseInt(textB3.getText()));
-				control.ingresoDeResultados(1, 3, textB4.getText().equals("") ? 0 : Integer.parseInt(textB4.getText()));
-				control.ingresoDeResultados(2, 0, textC1.getText().equals("") ? 0 : Integer.parseInt(textC1.getText()));
-				control.ingresoDeResultados(2, 1, textC2.getText().equals("") ? 0 : Integer.parseInt(textC2.getText()));
-				control.ingresoDeResultados(2, 2, textC3.getText().equals("") ? 0 : Integer.parseInt(textC3.getText()));
-				control.ingresoDeResultados(2, 3, textC4.getText().equals("") ? 0 : Integer.parseInt(textC4.getText()));
-				control.ingresoDeResultados(3, 0, textD1.getText().equals("") ? 0 : Integer.parseInt(textD1.getText()));
-				control.ingresoDeResultados(3, 1, textD2.getText().equals("") ? 0 : Integer.parseInt(textD2.getText()));
-				control.ingresoDeResultados(3, 2, textD3.getText().equals("") ? 0 : Integer.parseInt(textD3.getText()));
-				control.ingresoDeResultados(3, 3, textD4.getText().equals("") ? 0 : Integer.parseInt(textD4.getText()));
+				/*
+				control.ingresoDeResultados(0, 0, text1.getText().equals("") ? 0 : Integer.parseInt(text1.getText()));
+				control.ingresoDeResultados(0, 1, text2.getText().equals("") ? 0 : Integer.parseInt(text2.getText()));
+				control.ingresoDeResultados(0, 2, text3.getText().equals("") ? 0 : Integer.parseInt(text3.getText()));
+				control.ingresoDeResultados(0, 3, text4.getText().equals("") ? 0 : Integer.parseInt(text4.getText()));
+				control.ingresoDeResultados(1, 0, text5.getText().equals("") ? 0 : Integer.parseInt(text5.getText()));
+				control.ingresoDeResultados(1, 1, text6.getText().equals("") ? 0 : Integer.parseInt(text6.getText()));
+				control.ingresoDeResultados(1, 2, text7.getText().equals("") ? 0 : Integer.parseInt(text7.getText()));
+				control.ingresoDeResultados(1, 3, text8.getText().equals("") ? 0 : Integer.parseInt(text8.getText()));
+				control.ingresoDeResultados(2, 0, text9.getText().equals("") ? 0 : Integer.parseInt(text9.getText()));
+				control.ingresoDeResultados(2, 1, text10.getText().equals("") ? 0 : Integer.parseInt(text10.getText()));
+				control.ingresoDeResultados(2, 2, text11.getText().equals("") ? 0 : Integer.parseInt(text11.getText()));
+				control.ingresoDeResultados(2, 3, text12.getText().equals("") ? 0 : Integer.parseInt(text12.getText()));
+				control.ingresoDeResultados(3, 0, text13.getText().equals("") ? 0 : Integer.parseInt(text13.getText()));
+				control.ingresoDeResultados(3, 1, text14.getText().equals("") ? 0 : Integer.parseInt(text14.getText()));
+				control.ingresoDeResultados(3, 2, text15.getText().equals("") ? 0 : Integer.parseInt(text15.getText()));
+				control.ingresoDeResultados(3, 3, text16.getText().equals("") ? 0 : Integer.parseInt(text16.getText()));
+				*/
+				for (int i = 0; i < 4; i++) {
+				    for (int j = 0; j < 4; j++) {
+				        JTextField textField = (JTextField) getContentPane().getComponent(i*4+j);
+				        int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
+				        control.ingresoDeResultados(i, j, valor);
+				    }
+				}
+				
 				control.actualizarEstado();
 
 				ArrayList<Boolean> filasCompletas = control.filasCompletas();

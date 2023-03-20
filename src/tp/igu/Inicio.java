@@ -76,8 +76,10 @@ public class Inicio extends JFrame {
 		btnComenzar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				JuegoAritmetico juego = new JuegoAritmetico(textNombre.getText());
+				//if (comboBoxNivel.getSelectedItem().equals("Principiante")){
+				JuegoAritmeticoLvl1 juego = new JuegoAritmeticoLvl1(textNombre.getText());
 				juego.setVisible(true);
+				//}
 			}
 		});
 		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
