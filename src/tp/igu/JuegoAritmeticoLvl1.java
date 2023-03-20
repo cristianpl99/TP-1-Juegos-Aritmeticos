@@ -351,7 +351,7 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 				control.actualizarEstado();
 
 				ArrayList<Boolean> filasCompletas = control.filasCompletas();
-
+				 /*
 				for (int i = 0; i < filasCompletas.size(); i++) {
 					if (i == 0 && filasCompletas.get(i) == true)
 						panel_0.setBackground(new Color(0, 255, 0));
@@ -377,6 +377,27 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 					if (i == 3 && filasCompletas.get(i) == false)
 						panel_3.setBackground(new Color(255, 0, 0));
 				}
+				*/
+				for (int i = 0; i < filasCompletas.size(); i++) {
+				    Color color = filasCompletas.get(i) ? new Color(0, 255, 0) : new Color(255, 0, 0);
+				    switch(i) {
+				        case 0:
+				            panel_0.setBackground(color);
+				            break;
+				        case 1:
+				            panel_1.setBackground(color);
+				            break;
+				        case 2:
+				            panel_2.setBackground(color);
+				            break;
+				        case 3:
+				            panel_3.setBackground(color);
+				            break;
+				        default:
+				            break;
+				    }
+				}
+
 
 				ArrayList<Boolean> columnasCompletas = control.columnasCompletas();
 
