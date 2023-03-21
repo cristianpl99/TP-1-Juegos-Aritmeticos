@@ -74,7 +74,7 @@ public class Fin extends JFrame {
 		
 		JLabel lblSegundoPuesto = new JLabel("");
 		if(jugadoresPodio.size()>1) {
-			lblPrimerPuesto.setText(String.valueOf(jugadoresPodio.get(1).getNombre())+ " " + jugadoresPodio.get(1).getPuntaje());
+			lblSegundoPuesto.setText(String.valueOf(jugadoresPodio.get(1).getNombre())+ " " + jugadoresPodio.get(1).getPuntaje());
 		}
 		lblSegundoPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSegundoPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -83,7 +83,7 @@ public class Fin extends JFrame {
 		
 		JLabel lblTercerPuesto = new JLabel("");
 		if(jugadoresPodio.size()>2) {
-			lblPrimerPuesto.setText(String.valueOf(jugadoresPodio.get(2).getNombre())+ " " + jugadoresPodio.get(2).getPuntaje());
+			lblTercerPuesto.setText(String.valueOf(jugadoresPodio.get(2).getNombre())+ " " + jugadoresPodio.get(2).getPuntaje());
 		}
 		lblTercerPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTercerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
