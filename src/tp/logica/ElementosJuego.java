@@ -67,10 +67,11 @@ public class ElementosJuego {
 	}
 	
 	public void imprimirMatriz() {
-		for (int fila = 0; fila < this.mat.length; fila++) {
-			for (int col = 0; col < this.mat[0].length; col++) {
-				System.out.println(this.mat[fila][col]);
-			}
+		for (int i = 0; i < this.mat.length; i++) {
+		    for (int j = 0; j < this.mat[0].length; j++) {
+		        System.out.print(this.mat[i][j] + " ");
+		    }
+		    System.out.println(); 
 		}
 	}
 }

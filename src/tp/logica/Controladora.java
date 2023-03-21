@@ -1,14 +1,21 @@
 package tp.logica;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import tp.persistencia.Persistencia;
 
 public class Controladora {
 
 	private ElementosJuego juego;
+	private Jugador jugador;
+	private Persistencia persistencia;
 
 	public Controladora(int filas, int columnas) {
 		ElementosJuego juego = new ElementosJuego(filas, columnas);
 		this.juego = juego;
+	}
+	public Controladora() {
 	}
 
 	public void ingresoDeResultados(int fila, int colum, int valor) {
@@ -78,6 +85,18 @@ public class Controladora {
 		}
 		return columnasCompletas;
 	}
+	
+	public void crearJugador(String nombre, int puntaje) {
+		Jugador jugador = new Jugador(nombre, puntaje);
+		Persistencia persistencia = new Persistencia();
+		persistencia.guardarJugador(jugador);
+	}
+	
+	public List<Jugador> jugadoresPodio(){
+		Persistencia persistencia = new Persistencia();
+		return persistencia.recuperarJugadores();
+	}
+	
 
 	// cambiar getters por iterators
 	public int[] getColumResul() {
