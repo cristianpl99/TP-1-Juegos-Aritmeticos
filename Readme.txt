@@ -17,6 +17,7 @@ problemas para el informe:
 -creacion de la matriz visual (la grilla)
 -la subida de los resultados a el archivo de marcadores
 -bug marcadores vacio
+-DECIR QUE SE TIENE QUE CAMBIAR LA RUTA DEL ARCHIVO PUNTAJE
 - .....
 
 codigo para el informe:
