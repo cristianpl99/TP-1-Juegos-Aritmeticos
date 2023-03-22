@@ -1,16 +1,12 @@
 package tp.igu;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import tp.logica.ElementosJuego;
 import tp.logica.Jugador;
 import tp.logica.Controladora;
 
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.util.List;
@@ -20,7 +16,6 @@ import javax.swing.JLabel;
 public class Fin extends JFrame {
 
 	private JPanel contentPane;
-	private Controladora controladora;
 
 	public Fin(String nombre, int tiempo) {
 		setTitle("Gracias por jugar");
@@ -52,44 +47,46 @@ public class Fin extends JFrame {
 		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 21));
 		lblTiempo.setBounds(0, 160, 424, 30);
 		contentPane.add(lblTiempo);
-		
+
 		JLabel lblNewLabel = new JLabel("MEJORES PUNTAJES");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(122, 212, 191, 35);
 		contentPane.add(lblNewLabel);
-		
+
 		Controladora controladora = new Controladora();
 		controladora.crearJugador(nombre, tiempo);
 		List<Jugador> jugadoresPodio = controladora.jugadoresPodio();
-		
-		JLabel lblPrimerPuesto = new JLabel("" );
-		if(jugadoresPodio.get(0) != null) {
-			lblPrimerPuesto.setText(String.valueOf(jugadoresPodio.get(0).getNombre())+ " " + jugadoresPodio.get(0).getPuntaje());
+
+		JLabel lblPrimerPuesto = new JLabel("");
+		if (jugadoresPodio.get(0) != null) {
+			lblPrimerPuesto.setText(
+					String.valueOf(jugadoresPodio.get(0).getNombre()) + " " + jugadoresPodio.get(0).getPuntaje());
 		}
 		lblPrimerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblPrimerPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrimerPuesto.setBounds(74, 258, 292, 30);
 		contentPane.add(lblPrimerPuesto);
-		
+
 		JLabel lblSegundoPuesto = new JLabel("");
-		if(jugadoresPodio.size()>1) {
-			lblSegundoPuesto.setText(String.valueOf(jugadoresPodio.get(1).getNombre())+ " " + jugadoresPodio.get(1).getPuntaje());
+		if (jugadoresPodio.size() > 1) {
+			lblSegundoPuesto.setText(
+					String.valueOf(jugadoresPodio.get(1).getNombre()) + " " + jugadoresPodio.get(1).getPuntaje());
 		}
 		lblSegundoPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSegundoPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblSegundoPuesto.setBounds(74, 299, 292, 30);
 		contentPane.add(lblSegundoPuesto);
-		
+
 		JLabel lblTercerPuesto = new JLabel("");
-		if(jugadoresPodio.size()>2) {
-			lblTercerPuesto.setText(String.valueOf(jugadoresPodio.get(2).getNombre())+ " " + jugadoresPodio.get(2).getPuntaje());
+		if (jugadoresPodio.size() > 2) {
+			lblTercerPuesto.setText(
+					String.valueOf(jugadoresPodio.get(2).getNombre()) + " " + jugadoresPodio.get(2).getPuntaje());
 		}
 		lblTercerPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTercerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblTercerPuesto.setBounds(74, 340, 292, 30);
 		contentPane.add(lblTercerPuesto);
-		
-		
+
 	}
 }

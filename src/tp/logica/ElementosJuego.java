@@ -21,7 +21,7 @@ public class ElementosJuego {
 			}
 		}
 		this.mat = mat;
-		//aux visualizacion
+		// aux visualizacion
 		this.imprimirMatriz();
 
 		filasComp = new boolean[filas];
@@ -65,13 +65,13 @@ public class ElementosJuego {
 			}
 		}
 	}
-	
+
 	public void imprimirMatriz() {
 		for (int i = 0; i < this.mat.length; i++) {
-		    for (int j = 0; j < this.mat[0].length; j++) {
-		        System.out.print(this.mat[i][j] + " ");
-		    }
-		    System.out.println(); 
+			for (int j = 0; j < this.mat[0].length; j++) {
+				System.out.print(this.mat[i][j] + " ");
+			}
+			System.out.println();
 		}
 	}
 }

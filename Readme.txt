@@ -10,10 +10,13 @@ cambios faltantes:
 
 -emprolijar codigo, mandando comentarios a la zona de coment, y eliminando aux de visualizacion innecesarios
 
+-solucionar bug marcadores vacio
+
 problemas para el informe:
 -ingreso por teclado a cada casilla
 -creacion de la matriz visual (la grilla)
 -la subida de los resultados a el archivo de marcadores
+-bug marcadores vacio
 - .....
 
 codigo para el informe:

@@ -2,9 +2,7 @@ package tp.igu;
 
 import java.awt.Color;
 
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,15 +12,12 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
-import tp.logica.ElementosJuego;
 import tp.logica.Controladora;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.Box;
 import java.awt.Panel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -323,130 +318,133 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
 				/*
-				control.ingresoDeResultados(0, 0, text1.getText().equals("") ? 0 : Integer.parseInt(text1.getText()));
-				control.ingresoDeResultados(0, 1, text2.getText().equals("") ? 0 : Integer.parseInt(text2.getText()));
-				control.ingresoDeResultados(0, 2, text3.getText().equals("") ? 0 : Integer.parseInt(text3.getText()));
-				control.ingresoDeResultados(0, 3, text4.getText().equals("") ? 0 : Integer.parseInt(text4.getText()));
-				control.ingresoDeResultados(1, 0, text5.getText().equals("") ? 0 : Integer.parseInt(text5.getText()));
-				control.ingresoDeResultados(1, 1, text6.getText().equals("") ? 0 : Integer.parseInt(text6.getText()));
-				control.ingresoDeResultados(1, 2, text7.getText().equals("") ? 0 : Integer.parseInt(text7.getText()));
-				control.ingresoDeResultados(1, 3, text8.getText().equals("") ? 0 : Integer.parseInt(text8.getText()));
-				control.ingresoDeResultados(2, 0, text9.getText().equals("") ? 0 : Integer.parseInt(text9.getText()));
-				control.ingresoDeResultados(2, 1, text10.getText().equals("") ? 0 : Integer.parseInt(text10.getText()));
-				control.ingresoDeResultados(2, 2, text11.getText().equals("") ? 0 : Integer.parseInt(text11.getText()));
-				control.ingresoDeResultados(2, 3, text12.getText().equals("") ? 0 : Integer.parseInt(text12.getText()));
-				control.ingresoDeResultados(3, 0, text13.getText().equals("") ? 0 : Integer.parseInt(text13.getText()));
-				control.ingresoDeResultados(3, 1, text14.getText().equals("") ? 0 : Integer.parseInt(text14.getText()));
-				control.ingresoDeResultados(3, 2, text15.getText().equals("") ? 0 : Integer.parseInt(text15.getText()));
-				control.ingresoDeResultados(3, 3, text16.getText().equals("") ? 0 : Integer.parseInt(text16.getText()));
-				*/
+				 * control.ingresoDeResultados(0, 0, text1.getText().equals("") ? 0 :
+				 * Integer.parseInt(text1.getText())); control.ingresoDeResultados(0, 1,
+				 * text2.getText().equals("") ? 0 : Integer.parseInt(text2.getText()));
+				 * control.ingresoDeResultados(0, 2, text3.getText().equals("") ? 0 :
+				 * Integer.parseInt(text3.getText())); control.ingresoDeResultados(0, 3,
+				 * text4.getText().equals("") ? 0 : Integer.parseInt(text4.getText()));
+				 * control.ingresoDeResultados(1, 0, text5.getText().equals("") ? 0 :
+				 * Integer.parseInt(text5.getText())); control.ingresoDeResultados(1, 1,
+				 * text6.getText().equals("") ? 0 : Integer.parseInt(text6.getText()));
+				 * control.ingresoDeResultados(1, 2, text7.getText().equals("") ? 0 :
+				 * Integer.parseInt(text7.getText())); control.ingresoDeResultados(1, 3,
+				 * text8.getText().equals("") ? 0 : Integer.parseInt(text8.getText()));
+				 * control.ingresoDeResultados(2, 0, text9.getText().equals("") ? 0 :
+				 * Integer.parseInt(text9.getText())); control.ingresoDeResultados(2, 1,
+				 * text10.getText().equals("") ? 0 : Integer.parseInt(text10.getText()));
+				 * control.ingresoDeResultados(2, 2, text11.getText().equals("") ? 0 :
+				 * Integer.parseInt(text11.getText())); control.ingresoDeResultados(2, 3,
+				 * text12.getText().equals("") ? 0 : Integer.parseInt(text12.getText()));
+				 * control.ingresoDeResultados(3, 0, text13.getText().equals("") ? 0 :
+				 * Integer.parseInt(text13.getText())); control.ingresoDeResultados(3, 1,
+				 * text14.getText().equals("") ? 0 : Integer.parseInt(text14.getText()));
+				 * control.ingresoDeResultados(3, 2, text15.getText().equals("") ? 0 :
+				 * Integer.parseInt(text15.getText())); control.ingresoDeResultados(3, 3,
+				 * text16.getText().equals("") ? 0 : Integer.parseInt(text16.getText()));
+				 */
 				for (int i = 0; i < 4; i++) {
-				    for (int j = 0; j < 4; j++) {
-				        JTextField textField = (JTextField) getContentPane().getComponent(i*4+j);
-				        int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
-				        control.ingresoDeResultados(i, j, valor);
-				    }
+					for (int j = 0; j < 4; j++) {
+						JTextField textField = (JTextField) getContentPane().getComponent(i * 4 + j);
+						int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
+						control.ingresoDeResultados(i, j, valor);
+					}
 				}
-				
+
 				control.actualizarEstado();
 
 				ArrayList<Boolean> filasCompletas = control.filasCompletas();
-				 /*
+				/*
+				 * for (int i = 0; i < filasCompletas.size(); i++) { if (i == 0 &&
+				 * filasCompletas.get(i) == true) panel_0.setBackground(new Color(0, 255, 0));
+				 * 
+				 * if (i == 0 && filasCompletas.get(i) == false) panel_0.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 1 && filasCompletas.get(i) == true) panel_1.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 1 && filasCompletas.get(i) == false) panel_1.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 2 && filasCompletas.get(i) == true) panel_2.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 2 && filasCompletas.get(i) == false) panel_2.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 3 && filasCompletas.get(i) == true) panel_3.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 3 && filasCompletas.get(i) == false) panel_3.setBackground(new
+				 * Color(255, 0, 0)); }
+				 */
 				for (int i = 0; i < filasCompletas.size(); i++) {
-					if (i == 0 && filasCompletas.get(i) == true)
-						panel_0.setBackground(new Color(0, 255, 0));
-
-					if (i == 0 && filasCompletas.get(i) == false)
-						panel_0.setBackground(new Color(255, 0, 0));
-
-					if (i == 1 && filasCompletas.get(i) == true)
-						panel_1.setBackground(new Color(0, 255, 0));
-
-					if (i == 1 && filasCompletas.get(i) == false)
-						panel_1.setBackground(new Color(255, 0, 0));
-
-					if (i == 2 && filasCompletas.get(i) == true)
-						panel_2.setBackground(new Color(0, 255, 0));
-
-					if (i == 2 && filasCompletas.get(i) == false)
-						panel_2.setBackground(new Color(255, 0, 0));
-
-					if (i == 3 && filasCompletas.get(i) == true)
-						panel_3.setBackground(new Color(0, 255, 0));
-
-					if (i == 3 && filasCompletas.get(i) == false)
-						panel_3.setBackground(new Color(255, 0, 0));
+					Color color = filasCompletas.get(i) ? new Color(0, 255, 0) : new Color(255, 0, 0);
+					switch (i) {
+					case 0:
+						panel_0.setBackground(color);
+						break;
+					case 1:
+						panel_1.setBackground(color);
+						break;
+					case 2:
+						panel_2.setBackground(color);
+						break;
+					case 3:
+						panel_3.setBackground(color);
+						break;
+					default:
+						break;
+					}
 				}
-				*/
-				for (int i = 0; i < filasCompletas.size(); i++) {
-				    Color color = filasCompletas.get(i) ? new Color(0, 255, 0) : new Color(255, 0, 0);
-				    switch(i) {
-				        case 0:
-				            panel_0.setBackground(color);
-				            break;
-				        case 1:
-				            panel_1.setBackground(color);
-				            break;
-				        case 2:
-				            panel_2.setBackground(color);
-				            break;
-				        case 3:
-				            panel_3.setBackground(color);
-				            break;
-				        default:
-				            break;
-				    }
-				}
-
 
 				ArrayList<Boolean> columnasCompletas = control.columnasCompletas();
-				
 				/*
+				 * for (int i = 0; i < filasCompletas.size(); i++) { if (i == 0 &&
+				 * columnasCompletas.get(i) == true) panel_4.setBackground(new Color(0, 255,
+				 * 0));
+				 * 
+				 * if (i == 0 && columnasCompletas.get(i) == false) panel_4.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 1 && columnasCompletas.get(i) == true) panel_5.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 1 && columnasCompletas.get(i) == false) panel_5.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 2 && columnasCompletas.get(i) == true) panel_6.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 2 && columnasCompletas.get(i) == false) panel_6.setBackground(new
+				 * Color(255, 0, 0));
+				 * 
+				 * if (i == 3 && columnasCompletas.get(i) == true) panel_7.setBackground(new
+				 * Color(0, 255, 0));
+				 * 
+				 * if (i == 3 && columnasCompletas.get(i) == false) panel_7.setBackground(new
+				 * Color(255, 0, 0)); }
+				 */
 				for (int i = 0; i < filasCompletas.size(); i++) {
-					if (i == 0 && columnasCompletas.get(i) == true)
-						panel_4.setBackground(new Color(0, 255, 0));
-
-					if (i == 0 && columnasCompletas.get(i) == false)
-						panel_4.setBackground(new Color(255, 0, 0));
-
-					if (i == 1 && columnasCompletas.get(i) == true)
-						panel_5.setBackground(new Color(0, 255, 0));
-
-					if (i == 1 && columnasCompletas.get(i) == false)
-						panel_5.setBackground(new Color(255, 0, 0));
-
-					if (i == 2 && columnasCompletas.get(i) == true)
-						panel_6.setBackground(new Color(0, 255, 0));
-
-					if (i == 2 && columnasCompletas.get(i) == false)
-						panel_6.setBackground(new Color(255, 0, 0));
-
-					if (i == 3 && columnasCompletas.get(i) == true)
-						panel_7.setBackground(new Color(0, 255, 0));
-
-					if (i == 3 && columnasCompletas.get(i) == false)
-						panel_7.setBackground(new Color(255, 0, 0));
-				}
-				*/
-				for (int i = 0; i < filasCompletas.size(); i++) {
-				    boolean columnaCompleta = columnasCompletas.get(i);
-				    Color color = columnaCompleta ? new Color(0, 255, 0) : new Color(255, 0, 0);
-				    switch(i) {
-				        case 0:
-				            panel_4.setBackground(color);
-				            break;
-				        case 1:
-				            panel_5.setBackground(color);
-				            break;
-				        case 2:
-				            panel_6.setBackground(color);
-				            break;
-				        case 3:
-				            panel_7.setBackground(color);
-				            break;
-				        default:
-				           // no hace nada
-				    }
+					boolean columnaCompleta = columnasCompletas.get(i);
+					Color color = columnaCompleta ? new Color(0, 255, 0) : new Color(255, 0, 0);
+					switch (i) {
+					case 0:
+						panel_4.setBackground(color);
+						break;
+					case 1:
+						panel_5.setBackground(color);
+						break;
+					case 2:
+						panel_6.setBackground(color);
+						break;
+					case 3:
+						panel_7.setBackground(color);
+						break;
+					default:
+						break;
+					}
 				}
 
 				if (control.completoJuego()) {
@@ -471,10 +469,10 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 					e.consume();
 				}
 				if (key == 48 && jText.getText().trim().length() == 0) {
-					
-						e.consume();
-				
-			}
+
+					e.consume();
+
+				}
 			}
 		});
 

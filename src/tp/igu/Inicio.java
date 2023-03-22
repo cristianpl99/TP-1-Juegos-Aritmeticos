@@ -1,9 +1,7 @@
 package tp.igu;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -18,8 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import tp.logica.ElementosJuego;
 
 public class Inicio extends JFrame {
 
@@ -76,10 +72,10 @@ public class Inicio extends JFrame {
 		btnComenzar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				//if (comboBoxNivel.getSelectedItem().equals("Principiante")){
+				// if (comboBoxNivel.getSelectedItem().equals("Principiante")){
 				JuegoAritmeticoLvl1 juego = new JuegoAritmeticoLvl1(textNombre.getText());
 				juego.setVisible(true);
-				//}
+				// }
 			}
 		});
 		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
