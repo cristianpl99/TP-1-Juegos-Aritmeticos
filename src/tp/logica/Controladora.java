@@ -45,7 +45,12 @@ public class Controladora {
 		for (int col = 0; col < juego.mat[0].length; col++) {
 			int suma = 0;
 			for (int fila = 0; fila < juego.mat.length; fila++) {
-				suma = suma + juego.mat[fila][col];
+				if (juego.mat[fila][col] == 0) {
+					suma = 0;
+					break;
+				} else {
+					suma = suma + juego.mat[fila][col];
+				}
 			}
 			if (suma == juego.columResul[col]) {
 				juego.columnasComp[col] = true;
@@ -59,7 +64,12 @@ public class Controladora {
 		for (int fila = 0; fila < juego.mat.length; fila++) {
 			int suma = 0;
 			for (int col = 0; col < juego.mat[0].length; col++) {
-				suma = suma + juego.mat[fila][col];
+				if (juego.mat[fila][col] == 0) {
+					suma = 0;
+					break;
+				} else {
+					suma = suma + juego.mat[fila][col];
+				}
 			}
 			if (suma == juego.filaResul[fila]) {
 				juego.filasComp[fila] = true;

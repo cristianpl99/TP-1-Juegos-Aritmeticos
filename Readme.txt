@@ -1,7 +1,6 @@
 cambios faltantes:
 
--agregar los otros dos niveles
--hacer archivo de puntuacion por nivel
+-automatizar todo para poder crear los otros niveles
 
 -emprolijar codigo, mandando comentarios a la zona de coment, y eliminando aux de visualizacion innecesarios
 
@@ -17,6 +16,8 @@ problemas para el informe:
 -la subida de los resultados a el archivo de marcadores
 -bug marcadores vacio
 -DECIR QUE SE TIENE QUE CAMBIAR LA RUTA DEL ARCHIVO PUNTAJE
+-automatizado de todo
+-bug de suma sin valores
 - .....
 
 codigo para el informe:

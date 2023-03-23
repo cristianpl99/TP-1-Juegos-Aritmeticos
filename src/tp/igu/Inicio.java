@@ -78,7 +78,7 @@ public class Inicio extends JFrame {
 				 }
 				 else{dispose();
 				// if (comboBoxNivel.getSelectedItem().equals("Principiante")){
-				JuegoAritmeticoLvl1 juego = new JuegoAritmeticoLvl1(textNombre.getText());
+				JuegoAritmetico juego = new JuegoAritmetico(textNombre.getText(), 4);
 				juego.setResizable(false);
 				juego.setVisible(true);
 				// }

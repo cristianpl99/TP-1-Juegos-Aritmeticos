@@ -22,7 +22,7 @@ import java.awt.Panel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class JuegoAritmeticoLvl1 extends JFrame {
+public class JuegoAritmetico extends JFrame {
 
 	private JPanel contentPane;
 //	private JTextField text1;
@@ -55,11 +55,11 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 	private Panel panel_4;
 	private Panel panel_7;
 
-	public JuegoAritmeticoLvl1(String nombre) {
+	public JuegoAritmetico(String nombre, int matSize) {
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 609, 556);
+		setBounds(100, 100, 600, 600);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 128, 128));
@@ -69,15 +69,15 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 		contentPane.setLayout(null);
 
 		// inicio una instancia del objeto Controladora
-		Controladora control = new Controladora(4, 4);
+		Controladora control = new Controladora(matSize, matSize);
 
 		// creacion auto de la matriz visual
-		JTextField[][] matrizText = new JTextField[4][4];
+		matrizText = new JTextField[matSize][matSize];
 
 		int y = 70;
 		int x = 100;
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < matSize; i++) {
+			for (int j = 0; j < matSize; j++) {
 				JTextField text = new JTextField();
 				validarEntrada(text);
 				text.setHorizontalAlignment(SwingConstants.CENTER);
@@ -220,105 +220,108 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 //		text16.setBounds(400, 369, 50, 43);
 //		contentPane.add(text16);
 
+		int xResultados = matrizText.length * 100 + 75;
+		int yResultados = matrizText[0].length * 100 + 35;
+
 		JLabel lblA = new JLabel(String.valueOf(control.getFilaResul(0)));
 		lblA.setHorizontalAlignment(SwingConstants.CENTER);
 		lblA.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblA.setBounds(498, 67, 46, 43);
+		lblA.setBounds(xResultados, 70, 46, 43);
 		contentPane.add(lblA);
 
 		JLabel lblB = new JLabel(String.valueOf(control.getFilaResul(1)));
 		lblB.setHorizontalAlignment(SwingConstants.CENTER);
 		lblB.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblB.setBounds(498, 170, 46, 43);
+		lblB.setBounds(xResultados, 170, 46, 43);
 		contentPane.add(lblB);
 
 		JLabel lblC = new JLabel(String.valueOf(control.getFilaResul(2)));
 		lblC.setHorizontalAlignment(SwingConstants.CENTER);
 		lblC.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblC.setBounds(498, 269, 46, 43);
+		lblC.setBounds(xResultados, 270, 46, 43);
 		contentPane.add(lblC);
 
 		JLabel lblD = new JLabel(String.valueOf(control.getFilaResul(3)));
 		lblD.setHorizontalAlignment(SwingConstants.CENTER);
 		lblD.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblD.setBounds(498, 369, 46, 43);
+		lblD.setBounds(xResultados, 370, 46, 43);
 		contentPane.add(lblD);
 
 		JLabel lbl1 = new JLabel(String.valueOf(control.getColumResul(0)));
 		lbl1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lbl1.setBounds(101, 463, 46, 43);
+		lbl1.setBounds(100, yResultados, 46, 43);
 		contentPane.add(lbl1);
 
 		JLabel lbl2 = new JLabel(String.valueOf(control.getColumResul(1)));
 		lbl2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lbl2.setBounds(204, 463, 46, 43);
+		lbl2.setBounds(200, yResultados, 46, 43);
 		contentPane.add(lbl2);
 
 		JLabel lbl3 = new JLabel(String.valueOf(control.getColumResul(2)));
 		lbl3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lbl3.setBounds(304, 463, 46, 43);
+		lbl3.setBounds(300, yResultados, 46, 43);
 		contentPane.add(lbl3);
 
 		JLabel lbl4 = new JLabel(String.valueOf(control.getColumResul(3)));
 		lbl4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lbl4.setBounds(404, 463, 46, 43);
+		lbl4.setBounds(400, yResultados, 46, 43);
 		contentPane.add(lbl4);
 
 		JLabel lblNewLabel = new JLabel("TIEMPO :");
 		lblNewLabel.setForeground(new Color(255, 0, 0));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblNewLabel.setBounds(10, 11, 137, 34);
+		lblNewLabel.setBounds(10, 10, 137, 34);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblTiempo = new JLabel("0");
 		lblTiempo.setHorizontalAlignment(SwingConstants.LEFT);
 		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblTiempo.setForeground(new Color(255, 0, 0));
-		lblTiempo.setBounds(142, 12, 123, 33);
+		lblTiempo.setBounds(140, 10, 123, 33);
 		contentPane.add(lblTiempo);
 
 		panel_0 = new Panel();
 		panel_0.setBackground(Color.RED);
-		panel_0.setBounds(80, 51, 388, 76);
+		panel_0.setBounds(80, 50, 388, 76);
 		contentPane.add(panel_0);
 
 		panel_1 = new Panel();
 		panel_1.setBackground(Color.RED);
-		panel_1.setBounds(80, 152, 388, 76);
+		panel_1.setBounds(80, 150, 388, 76);
 		contentPane.add(panel_1);
 
 		panel_2 = new Panel();
 		panel_2.setBackground(Color.RED);
-		panel_2.setBounds(80, 253, 388, 76);
+		panel_2.setBounds(80, 250, 388, 76);
 		contentPane.add(panel_2);
 
 		panel_3 = new Panel();
 		panel_3.setBackground(Color.RED);
-		panel_3.setBounds(80, 353, 388, 76);
+		panel_3.setBounds(80, 350, 388, 76);
 		contentPane.add(panel_3);
 
 		panel_4 = new Panel();
 		panel_4.setBackground(Color.RED);
-		panel_4.setBounds(80, 51, 87, 377);
+		panel_4.setBounds(80, 50, 87, 377);
 		contentPane.add(panel_4);
 
 		panel_5 = new Panel();
 		panel_5.setBackground(Color.RED);
-		panel_5.setBounds(181, 51, 87, 377);
+		panel_5.setBounds(180, 50, 87, 377);
 		contentPane.add(panel_5);
 
 		panel_6 = new Panel();
 		panel_6.setBackground(Color.RED);
-		panel_6.setBounds(281, 51, 87, 377);
+		panel_6.setBounds(280, 50, 87, 377);
 		contentPane.add(panel_6);
 
 		panel_7 = new Panel();
 		panel_7.setBackground(Color.RED);
-		panel_7.setBounds(382, 51, 87, 377);
+		panel_7.setBounds(380, 50, 87, 377);
 		contentPane.add(panel_7);
 
 		// Aux para ver el fin
@@ -366,8 +369,8 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 				 * Integer.parseInt(text15.getText())); control.ingresoDeResultados(3, 3,
 				 * text16.getText().equals("") ? 0 : Integer.parseInt(text16.getText()));
 				 */
-				for (int i = 0; i < 4; i++) {
-					for (int j = 0; j < 4; j++) {
+				for (int i = 0; i < matSize; i++) {
+					for (int j = 0; j < matSize; j++) {
 						// JTextField textField = (JTextField) getContentPane().getComponent(i * 4 + j);
 						JTextField textField = matrizText[i][j];
 						int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
