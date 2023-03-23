@@ -5,16 +5,16 @@ import java.util.List;
 
 import tp.persistencia.Persistencia;
 
-public class Controladora {
+public class Logica {
 
 	private ElementosJuego juego;
 
-	public Controladora(int filas, int columnas) {
+	public Logica(int filas, int columnas) {
 		ElementosJuego juego = new ElementosJuego(filas, columnas);
 		this.juego = juego;
 	}
 
-	public Controladora() {
+	public Logica() {
 	}
 
 	public void ingresoDeResultados(int fila, int colum, int valor) {

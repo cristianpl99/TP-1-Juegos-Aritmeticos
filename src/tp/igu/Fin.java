@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import tp.logica.Jugador;
-import tp.logica.Controladora;
+import tp.logica.Logica;
 
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -58,7 +58,7 @@ public class Fin extends JFrame {
 		lblNewLabel.setBounds(122, 212, 191, 35);
 		contentPane.add(lblNewLabel);
 
-		Controladora controladora = new Controladora();
+		Logica controladora = new Logica();
 		controladora.crearJugador(nombre, tiempo);
 		List<Jugador> jugadoresPodio = controladora.jugadoresPodio();
 

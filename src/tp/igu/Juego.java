@@ -12,7 +12,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.Timer;
 
-import tp.logica.Controladora;
+import tp.logica.Logica;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -22,13 +22,13 @@ import java.awt.Panel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class JuegoAritmetico extends JFrame {
+public class Juego extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField[][] matrizText;
 	private Timer timer = null;
 
-	public JuegoAritmetico(String nombre, int matSize) {
+	public Juego(String nombre, int matSize) {
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,7 +41,7 @@ public class JuegoAritmetico extends JFrame {
 		contentPane.setLayout(null);
 
 		// inicio una instancia del objeto Controladora
-		Controladora control = new Controladora(matSize, matSize);
+		Logica control = new Logica(matSize, matSize);
 
 		// creacion auto de la matriz visual
 		matrizText = new JTextField[matSize][matSize];
