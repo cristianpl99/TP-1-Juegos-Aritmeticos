@@ -19,6 +19,7 @@ public class Main {
 			// handle exception
 		}
 		Inicio inicio = new Inicio();
+		inicio.setResizable(false);
 		inicio.setVisible(true);
 		inicio.setLocationRelativeTo(null);
 	}

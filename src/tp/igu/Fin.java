@@ -12,6 +12,9 @@ import java.awt.Font;
 import java.util.List;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Fin extends JFrame {
 
@@ -21,6 +24,7 @@ public class Fin extends JFrame {
 		setTitle("Gracias por jugar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 486);
+		setResizable(false);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -87,6 +91,27 @@ public class Fin extends JFrame {
 		lblTercerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblTercerPuesto.setBounds(74, 340, 292, 30);
 		contentPane.add(lblTercerPuesto);
-
+		
+		JButton btnReplay = new JButton("Jugar de nuevo");
+		btnReplay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inicio inicio = new Inicio();
+				inicio.setResizable(false);
+				inicio.setVisible(true);
+				inicio.setLocationRelativeTo(null);
+				dispose();
+			}
+		});
+		btnReplay.setBounds(36, 413, 129, 23);
+		contentPane.add(btnReplay);
+		
+		JButton btnCerrar = new JButton("Cerrar Juego");
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					dispose();
+			}
+		});
+		btnCerrar.setBounds(276, 413, 129, 23);
+		contentPane.add(btnCerrar);
 	}
 }

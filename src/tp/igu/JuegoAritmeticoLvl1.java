@@ -451,6 +451,7 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 					dispose();
 					Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText()));
 					timer.stop();
+					fin.setResizable(false);
 					fin.setVisible(true);
 				}
 			}
