@@ -1,16 +1,15 @@
 cambios faltantes:
 
--cambiar geters por iterators
-
--refactorizar los contructores de objetos de la visual
 -agregar los otros dos niveles
 -hacer archivo de puntuacion por nivel
-
--terminar marcadores
 
 -emprolijar codigo, mandando comentarios a la zona de coment, y eliminando aux de visualizacion innecesarios
 
 -solucionar bug marcadores vacio
+
+-renombrar variables y nombres
+
+-cambiar forma de puntaje (limite tiempo?) tiempo - limite t x dificultad
 
 problemas para el informe:
 -ingreso por teclado a cada casilla

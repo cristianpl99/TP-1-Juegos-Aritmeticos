@@ -96,13 +96,12 @@ public class Controladora {
 		return persistencia.recuperarJugadores();
 	}
 
-	// cambiar getters por iterators
-	public int[] getColumResul() {
-		return juego.columResul;
+	public int getColumResul(int resul) {
+		return juego.columResul[resul];
 	}
 
-	public int[] getFilaResul() {
-		return juego.filaResul;
+	public int getFilaResul(int resul) {
+		return juego.filaResul[resul];
 	}
 
 }

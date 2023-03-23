@@ -25,22 +25,24 @@ import java.awt.event.KeyEvent;
 public class JuegoAritmeticoLvl1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField text1;
-	private JTextField text2;
-	private JTextField text3;
-	private JTextField text4;
-	private JTextField text5;
-	private JTextField text6;
-	private JTextField text7;
-	private JTextField text8;
-	private JTextField text9;
-	private JTextField text10;
-	private JTextField text11;
-	private JTextField text12;
-	private JTextField text13;
-	private JTextField text14;
-	private JTextField text15;
-	private JTextField text16;
+//	private JTextField text1;
+//	private JTextField text2;
+//	private JTextField text3;
+//	private JTextField text4;
+//	private JTextField text5;
+//	private JTextField text6;
+//	private JTextField text7;
+//	private JTextField text8;
+//	private JTextField text9;
+//	private JTextField text10;
+//	private JTextField text11;
+//	private JTextField text12;
+//	private JTextField text13;
+//	private JTextField text14;
+//	private JTextField text15;
+//	private JTextField text16;
+
+	private JTextField[][] matrizText;
 
 	private Timer timer = null;
 
@@ -69,177 +71,198 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 		// inicio una instancia del objeto Controladora
 		Controladora control = new Controladora(4, 4);
 
-		text1 = new JTextField();
-		validarEntrada(text1);
-		text1.setHorizontalAlignment(SwingConstants.CENTER);
-		text1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text1.setBounds(101, 69, 50, 43);
-		contentPane.add(text1);
-		text1.setColumns(10);
+		// creacion auto de la matriz visual
+		JTextField[][] matrizText = new JTextField[4][4];
 
-		text2 = new JTextField();
-		validarEntrada(text2);
-		text2.setHorizontalAlignment(SwingConstants.CENTER);
-		text2.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text2.setColumns(10);
-		text2.setBounds(200, 69, 50, 43);
-		contentPane.add(text2);
+		int y = 70;
+		int x = 100;
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				JTextField text = new JTextField();
+				validarEntrada(text);
+				text.setHorizontalAlignment(SwingConstants.CENTER);
+				text.setFont(new Font("Tahoma", Font.BOLD, 25));
+				text.setBounds(x, y, 50, 43);
+				contentPane.add(text);
+				text.setColumns(10);
+				matrizText[i][j] = text;
+				x = x + 100;
+			}
+			y = y + 100;
+			x = 100;
+		}
 
-		text3 = new JTextField();
-		validarEntrada(text3);
-		text3.setHorizontalAlignment(SwingConstants.CENTER);
-		text3.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text3.setColumns(10);
-		text3.setBounds(300, 69, 50, 43);
-		contentPane.add(text3);
+//		text1 = new JTextField();
+//		validarEntrada(text1);
+//		text1.setHorizontalAlignment(SwingConstants.CENTER);
+//		text1.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text1.setBounds(101, 69, 50, 43);
+//		contentPane.add(text1);
+//		text1.setColumns(10);
+//
+//		text2 = new JTextField();
+//		validarEntrada(text2);
+//		text2.setHorizontalAlignment(SwingConstants.CENTER);
+//		text2.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text2.setColumns(10);
+//		text2.setBounds(200, 69, 50, 43);
+//		contentPane.add(text2);
+//
+//		text3 = new JTextField();
+//		validarEntrada(text3);
+//		text3.setHorizontalAlignment(SwingConstants.CENTER);
+//		text3.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text3.setColumns(10);
+//		text3.setBounds(300, 69, 50, 43);
+//		contentPane.add(text3);
+//
+//		text4 = new JTextField();
+//		validarEntrada(text4);
+//		text4.setHorizontalAlignment(SwingConstants.CENTER);
+//		text4.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text4.setColumns(10);
+//		text4.setBounds(400, 69, 50, 43);
+//		contentPane.add(text4);
+//
+//		text5 = new JTextField();
+//		validarEntrada(text5);
+//		text5.setHorizontalAlignment(SwingConstants.CENTER);
+//		text5.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text5.setColumns(10);
+//		text5.setBounds(101, 170, 50, 43);
+//		contentPane.add(text5);
+//
+//		text6 = new JTextField();
+//		validarEntrada(text6);
+//		text6.setHorizontalAlignment(SwingConstants.CENTER);
+//		text6.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text6.setColumns(10);
+//		text6.setBounds(200, 170, 50, 43);
+//		contentPane.add(text6);
+//
+//		text7 = new JTextField();
+//		validarEntrada(text7);
+//		text7.setHorizontalAlignment(SwingConstants.CENTER);
+//		text7.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text7.setColumns(10);
+//		text7.setBounds(300, 170, 50, 43);
+//		contentPane.add(text7);
+//
+//		text8 = new JTextField();
+//		validarEntrada(text8);
+//		text8.setHorizontalAlignment(SwingConstants.CENTER);
+//		text8.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text8.setColumns(10);
+//		text8.setBounds(400, 170, 50, 43);
+//		contentPane.add(text8);
+//
+//		text9 = new JTextField();
+//		validarEntrada(text9);
+//		text9.setHorizontalAlignment(SwingConstants.CENTER);
+//		text9.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text9.setColumns(10);
+//		text9.setBounds(101, 269, 50, 43);
+//		contentPane.add(text9);
+//
+//		text10 = new JTextField();
+//		validarEntrada(text10);
+//		text10.setHorizontalAlignment(SwingConstants.CENTER);
+//		text10.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text10.setColumns(10);
+//		text10.setBounds(200, 269, 50, 43);
+//		contentPane.add(text10);
+//
+//		text11 = new JTextField();
+//		validarEntrada(text11);
+//		text11.setHorizontalAlignment(SwingConstants.CENTER);
+//		text11.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text11.setColumns(10);
+//		text11.setBounds(300, 269, 50, 43);
+//		contentPane.add(text11);
+//
+//		text12 = new JTextField();
+//		validarEntrada(text12);
+//		text12.setHorizontalAlignment(SwingConstants.CENTER);
+//		text12.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text12.setColumns(10);
+//		text12.setBounds(400, 269, 50, 43);
+//		contentPane.add(text12);
+//
+//		text13 = new JTextField();
+//		validarEntrada(text13);
+//		text13.setHorizontalAlignment(SwingConstants.CENTER);
+//		text13.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text13.setColumns(10);
+//		text13.setBounds(101, 369, 50, 43);
+//		contentPane.add(text13);
+//
+//		text14 = new JTextField();
+//		validarEntrada(text14);
+//		text14.setHorizontalAlignment(SwingConstants.CENTER);
+//		text14.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text14.setColumns(10);
+//		text14.setBounds(200, 369, 50, 43);
+//		contentPane.add(text14);
+//
+//		text15 = new JTextField();
+//		validarEntrada(text15);
+//		text15.setHorizontalAlignment(SwingConstants.CENTER);
+//		text15.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text15.setColumns(10);
+//		text15.setBounds(300, 369, 50, 43);
+//		contentPane.add(text15);
+//
+//		text16 = new JTextField();
+//		validarEntrada(text16);
+//		text16.setHorizontalAlignment(SwingConstants.CENTER);
+//		text16.setFont(new Font("Tahoma", Font.BOLD, 25));
+//		text16.setColumns(10);
+//		text16.setBounds(400, 369, 50, 43);
+//		contentPane.add(text16);
 
-		text4 = new JTextField();
-		validarEntrada(text4);
-		text4.setHorizontalAlignment(SwingConstants.CENTER);
-		text4.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text4.setColumns(10);
-		text4.setBounds(400, 69, 50, 43);
-		contentPane.add(text4);
-
-		text5 = new JTextField();
-		validarEntrada(text5);
-		text5.setHorizontalAlignment(SwingConstants.CENTER);
-		text5.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text5.setColumns(10);
-		text5.setBounds(101, 170, 50, 43);
-		contentPane.add(text5);
-
-		text6 = new JTextField();
-		validarEntrada(text6);
-		text6.setHorizontalAlignment(SwingConstants.CENTER);
-		text6.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text6.setColumns(10);
-		text6.setBounds(200, 170, 50, 43);
-		contentPane.add(text6);
-
-		text7 = new JTextField();
-		validarEntrada(text7);
-		text7.setHorizontalAlignment(SwingConstants.CENTER);
-		text7.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text7.setColumns(10);
-		text7.setBounds(300, 170, 50, 43);
-		contentPane.add(text7);
-
-		text8 = new JTextField();
-		validarEntrada(text8);
-		text8.setHorizontalAlignment(SwingConstants.CENTER);
-		text8.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text8.setColumns(10);
-		text8.setBounds(400, 170, 50, 43);
-		contentPane.add(text8);
-
-		text9 = new JTextField();
-		validarEntrada(text9);
-		text9.setHorizontalAlignment(SwingConstants.CENTER);
-		text9.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text9.setColumns(10);
-		text9.setBounds(101, 269, 50, 43);
-		contentPane.add(text9);
-
-		text10 = new JTextField();
-		validarEntrada(text10);
-		text10.setHorizontalAlignment(SwingConstants.CENTER);
-		text10.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text10.setColumns(10);
-		text10.setBounds(200, 269, 50, 43);
-		contentPane.add(text10);
-
-		text11 = new JTextField();
-		validarEntrada(text11);
-		text11.setHorizontalAlignment(SwingConstants.CENTER);
-		text11.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text11.setColumns(10);
-		text11.setBounds(300, 269, 50, 43);
-		contentPane.add(text11);
-
-		text12 = new JTextField();
-		validarEntrada(text12);
-		text12.setHorizontalAlignment(SwingConstants.CENTER);
-		text12.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text12.setColumns(10);
-		text12.setBounds(400, 269, 50, 43);
-		contentPane.add(text12);
-
-		text13 = new JTextField();
-		validarEntrada(text13);
-		text13.setHorizontalAlignment(SwingConstants.CENTER);
-		text13.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text13.setColumns(10);
-		text13.setBounds(101, 369, 50, 43);
-		contentPane.add(text13);
-
-		text14 = new JTextField();
-		validarEntrada(text14);
-		text14.setHorizontalAlignment(SwingConstants.CENTER);
-		text14.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text14.setColumns(10);
-		text14.setBounds(200, 369, 50, 43);
-		contentPane.add(text14);
-
-		text15 = new JTextField();
-		validarEntrada(text15);
-		text15.setHorizontalAlignment(SwingConstants.CENTER);
-		text15.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text15.setColumns(10);
-		text15.setBounds(300, 369, 50, 43);
-		contentPane.add(text15);
-
-		text16 = new JTextField();
-		validarEntrada(text16);
-		text16.setHorizontalAlignment(SwingConstants.CENTER);
-		text16.setFont(new Font("Tahoma", Font.BOLD, 25));
-		text16.setColumns(10);
-		text16.setBounds(400, 369, 50, 43);
-		contentPane.add(text16);
-
-		JLabel lblA = new JLabel(String.valueOf(control.getFilaResul()[0]));
+		JLabel lblA = new JLabel(String.valueOf(control.getFilaResul(0)));
 		lblA.setHorizontalAlignment(SwingConstants.CENTER);
 		lblA.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblA.setBounds(498, 67, 46, 43);
 		contentPane.add(lblA);
 
-		JLabel lblB = new JLabel(String.valueOf(control.getFilaResul()[1]));
+		JLabel lblB = new JLabel(String.valueOf(control.getFilaResul(1)));
 		lblB.setHorizontalAlignment(SwingConstants.CENTER);
 		lblB.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblB.setBounds(498, 170, 46, 43);
 		contentPane.add(lblB);
 
-		JLabel lblC = new JLabel(String.valueOf(control.getFilaResul()[2]));
+		JLabel lblC = new JLabel(String.valueOf(control.getFilaResul(2)));
 		lblC.setHorizontalAlignment(SwingConstants.CENTER);
 		lblC.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblC.setBounds(498, 269, 46, 43);
 		contentPane.add(lblC);
 
-		JLabel lblD = new JLabel(String.valueOf(control.getFilaResul()[3]));
+		JLabel lblD = new JLabel(String.valueOf(control.getFilaResul(3)));
 		lblD.setHorizontalAlignment(SwingConstants.CENTER);
 		lblD.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblD.setBounds(498, 369, 46, 43);
 		contentPane.add(lblD);
 
-		JLabel lbl1 = new JLabel(String.valueOf(control.getColumResul()[0]));
+		JLabel lbl1 = new JLabel(String.valueOf(control.getColumResul(0)));
 		lbl1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl1.setBounds(101, 463, 46, 43);
 		contentPane.add(lbl1);
 
-		JLabel lbl2 = new JLabel(String.valueOf(control.getColumResul()[1]));
+		JLabel lbl2 = new JLabel(String.valueOf(control.getColumResul(1)));
 		lbl2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl2.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl2.setBounds(204, 463, 46, 43);
 		contentPane.add(lbl2);
 
-		JLabel lbl3 = new JLabel(String.valueOf(control.getColumResul()[2]));
+		JLabel lbl3 = new JLabel(String.valueOf(control.getColumResul(2)));
 		lbl3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl3.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl3.setBounds(304, 463, 46, 43);
 		contentPane.add(lbl3);
 
-		JLabel lbl4 = new JLabel(String.valueOf(control.getColumResul()[3]));
+		JLabel lbl4 = new JLabel(String.valueOf(control.getColumResul(3)));
 		lbl4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl4.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lbl4.setBounds(404, 463, 46, 43);
@@ -259,7 +282,7 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 		contentPane.add(lblTiempo);
 
 		panel_0 = new Panel();
-		panel_0.setBackground(new Color(255, 0, 0));
+		panel_0.setBackground(Color.RED);
 		panel_0.setBounds(80, 51, 388, 76);
 		contentPane.add(panel_0);
 
@@ -345,7 +368,8 @@ public class JuegoAritmeticoLvl1 extends JFrame {
 				 */
 				for (int i = 0; i < 4; i++) {
 					for (int j = 0; j < 4; j++) {
-						JTextField textField = (JTextField) getContentPane().getComponent(i * 4 + j);
+						// JTextField textField = (JTextField) getContentPane().getComponent(i * 4 + j);
+						JTextField textField = matrizText[i][j];
 						int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
 						control.ingresoDeResultados(i, j, valor);
 					}
