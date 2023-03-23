@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Persistencia {
-	String locacion = "C:/Users/crist/Desktop/UNGS/P2/TP-1-Juegos-Aritmeticos/src/tp/persistencia/puntajes.txt";
+	String locacion = "src" + File.separator + "tp" + File.separator + "persistencia" + File.separator + "puntajes.txt"; ;
 	File archivo = new File(locacion);
 
 	public void guardarJugador(Jugador jugador) {
