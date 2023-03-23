@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -70,13 +71,18 @@ public class Inicio extends JFrame {
 
 		JButton btnComenzar = new JButton("Empezar el Juego");
 		btnComenzar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
+			 
+			 public void actionPerformed(ActionEvent e) {
+				 if (textNombre.getText().length() < 3) {
+		                JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
+				 }
+				 else{dispose();
 				// if (comboBoxNivel.getSelectedItem().equals("Principiante")){
 				JuegoAritmeticoLvl1 juego = new JuegoAritmeticoLvl1(textNombre.getText());
 				juego.setVisible(true);
 				// }
 			}
+			 }
 		});
 		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnComenzar.setBackground(new Color(192, 192, 192));
