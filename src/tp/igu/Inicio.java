@@ -71,23 +71,39 @@ public class Inicio extends JFrame {
 
 		JButton btnComenzar = new JButton("Empezar el Juego");
 		btnComenzar.addActionListener(new ActionListener() {
-			 
-			 public void actionPerformed(ActionEvent e) {
-				 if (textNombre.getText().length() < 3) {
-		                JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
-				 }
-				 else{dispose();
-				// if (comboBoxNivel.getSelectedItem().equals("Principiante")){
-				Juego juego = new Juego(textNombre.getText(), 4);
-				juego.setResizable(false);
-				juego.setVisible(true);
-				// }
+
+			public void actionPerformed(ActionEvent e) {
+				if (textNombre.getText().length() < 3) {
+					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
+				} else {
+					dispose();
+					if (comboBoxNivel.getSelectedItem().equals("Principiante")) {
+						Juego juego = new Juego(textNombre.getText(), 4, 650);
+						juego.setResizable(false);
+						juego.setVisible(true);
+					}
+					if (comboBoxNivel.getSelectedItem().equals("Intermedio")) {
+						Juego juego = new Juego(textNombre.getText(), 5, 750);
+						juego.setResizable(false);
+						juego.setVisible(true);
+					}
+					if (comboBoxNivel.getSelectedItem().equals("Experto")) {
+						Juego juego = new Juego(textNombre.getText(), 6, 850);
+						juego.setResizable(false);
+						juego.setVisible(true);
+					}
+				}
 			}
-			 }
 		});
 		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnComenzar.setBackground(new Color(192, 192, 192));
 		btnComenzar.setBounds(210, 276, 138, 41);
 		contentPane.add(btnComenzar);
+
+		JLabel lblIngreseNombre = new JLabel("INGRESE SU NOMBRE:");
+		lblIngreseNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIngreseNombre.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblIngreseNombre.setBounds(152, 86, 230, 41);
+		contentPane.add(lblIngreseNombre);
 	}
 }

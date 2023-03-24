@@ -28,11 +28,11 @@ public class Juego extends JFrame {
 	private JTextField[][] matrizText;
 	private Timer timer = null;
 
-	public Juego(String nombre, int matSize) {
+	public Juego(String nombre, int matSize, int dimensionVentana) {
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 600);
+		setBounds(100, 100, dimensionVentana, dimensionVentana);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 128, 128));
@@ -68,20 +68,19 @@ public class Juego extends JFrame {
 		int yResultados = matrizText[0].length * 100 + 35;
 		int anchoLabel = 45;
 		int altoLabel = 45;
-		int fontSize = 25;
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < matSize; i++) {
 			JLabel lbl = new JLabel(String.valueOf(control.getFilaResul(i)));
 			lbl.setHorizontalAlignment(SwingConstants.CENTER);
-			lbl.setFont(new Font("Tahoma", Font.BOLD, fontSize));
+			lbl.setFont(new Font("Tahoma", Font.BOLD, 25));
 			lbl.setBounds(xResultados, 70 + i * 100, anchoLabel, altoLabel);
 			contentPane.add(lbl);
 		}
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < matSize; i++) {
 			JLabel lbl = new JLabel(String.valueOf(control.getColumResul(i)));
 			lbl.setHorizontalAlignment(SwingConstants.CENTER);
-			lbl.setFont(new Font("Tahoma", Font.BOLD, fontSize));
+			lbl.setFont(new Font("Tahoma", Font.BOLD, 25));
 			lbl.setBounds(100 + i * 100, yResultados, anchoLabel, altoLabel);
 			contentPane.add(lbl);
 		}
@@ -99,21 +98,25 @@ public class Juego extends JFrame {
 		lblTiempo.setBounds(140, 10, 123, 33);
 		contentPane.add(lblTiempo);
 
-		int xPanel = 80;
-		int yPanel = 50;
-		int panelAncho = 388;
-		int panelAlto = 76;
+		int xPanel = matrizText.length * 100 + 125;
+		int yPanel = matrizText[0].length * 100 + 80;
+		int panelAncho = 50;
+		int panelAlto = 43;
 
-		Panel[] paneles = new Panel[8];
-		for (int i = 0; i < paneles.length; i++) {
-			paneles[i] = new Panel();
-			paneles[i].setBackground(Color.RED);
-			if (i < 4) {
-				paneles[i].setBounds(xPanel, yPanel + i * (panelAlto + 20), panelAncho, panelAlto);
-			} else {
-				paneles[i].setBounds(xPanel + (i - 4) * (panelAncho + 20), yPanel, 87, 377);
-			}
-			contentPane.add(paneles[i]);
+		Panel[] panelesFilas = new Panel[matSize];
+		for (int i = 0; i < matSize; i++) {
+			panelesFilas[i] = new Panel();
+			panelesFilas[i].setBackground(Color.RED);
+			panelesFilas[i].setBounds(xPanel, 70 + (i * 100), panelAncho, panelAlto);
+			contentPane.add(panelesFilas[i]);
+		}
+
+		Panel[] panelesColum = new Panel[matSize];
+		for (int i = 0; i < matSize; i++) {
+			panelesColum[i] = new Panel();
+			panelesColum[i].setBackground(Color.RED);
+			panelesColum[i].setBounds(100 + (i * 100), yPanel, panelAncho, panelAlto);
+			contentPane.add(panelesColum[i]);
 		}
 
 		// Aux para ver el fin
@@ -148,22 +151,7 @@ public class Juego extends JFrame {
 
 				for (int i = 0; i < filasCompletas.size(); i++) {
 					Color color = filasCompletas.get(i) ? new Color(0, 255, 0) : new Color(255, 0, 0);
-					switch (i) {
-					case 0:
-						paneles[0].setBackground(color);
-						break;
-					case 1:
-						paneles[1].setBackground(color);
-						break;
-					case 2:
-						paneles[2].setBackground(color);
-						break;
-					case 3:
-						paneles[3].setBackground(color);
-						break;
-					default:
-						break;
-					}
+					panelesFilas[i].setBackground(color);
 				}
 
 				ArrayList<Boolean> columnasCompletas = control.columnasCompletas();
@@ -171,22 +159,7 @@ public class Juego extends JFrame {
 				for (int i = 0; i < filasCompletas.size(); i++) {
 					boolean columnaCompleta = columnasCompletas.get(i);
 					Color color = columnaCompleta ? new Color(0, 255, 0) : new Color(255, 0, 0);
-					switch (i) {
-					case 0:
-						paneles[4].setBackground(color);
-						break;
-					case 1:
-						paneles[5].setBackground(color);
-						break;
-					case 2:
-						paneles[6].setBackground(color);
-						break;
-					case 3:
-						paneles[7].setBackground(color);
-						break;
-					default:
-						break;
-					}
+					panelesColum[i].setBackground(color);
 				}
 
 				if (control.completoJuego()) {
