@@ -28,7 +28,7 @@ public class Juego extends JFrame {
 	private JTextField[][] matrizText;
 	private Timer timer = null;
 
-	public Juego(String nombre, int matSize, int dimensionVentana) {
+	public Juego(String nombre, int matSize, int dimensionVentana, String nivel) {
 
 		setTitle("Programacion III - Juego Aritmetico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,16 +86,17 @@ public class Juego extends JFrame {
 		}
 
 		JLabel lblNewLabel = new JLabel("TIEMPO :");
-		lblNewLabel.setForeground(new Color(255, 0, 0));
+		lblNewLabel.setForeground(new Color(0, 0, 0));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblNewLabel.setBounds(10, 10, 137, 34);
 		contentPane.add(lblNewLabel);
-
-		JLabel lblTiempo = new JLabel("0");
+		
+		
+		JLabel lblTiempo = new JLabel("10 min : 00 seg");
 		lblTiempo.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblTiempo.setForeground(new Color(255, 0, 0));
-		lblTiempo.setBounds(140, 10, 123, 33);
+		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 22));
+		lblTiempo.setForeground(new Color(0, 0, 0));
+		lblTiempo.setBounds(140, 10, 298, 33);
 		contentPane.add(lblTiempo);
 
 		int xPanel = matrizText.length * 100 + 125;
@@ -125,7 +126,7 @@ public class Juego extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText()));
+				Fin fin = new Fin(nombre, 0, "0", nivel);
 				timer.stop();
 				fin.setVisible(true);
 			}
@@ -133,11 +134,14 @@ public class Juego extends JFrame {
 		btnCheat.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCheat.setBounds(494, 463, 89, 23);
 		contentPane.add(btnCheat);
-
+		
+		
 		timer = new Timer(1000, new ActionListener() {
+		int segundos = 600;
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				lblTiempo.setText(String.valueOf(Integer.parseInt(lblTiempo.getText()) + 1));
+				segundos -=1;
+				lblTiempo.setText(String.valueOf(convertirAMinutosSegundos(segundos)));
 				for (int i = 0; i < matSize; i++) {
 					for (int j = 0; j < matSize; j++) {
 						JTextField textField = matrizText[i][j];
@@ -164,14 +168,26 @@ public class Juego extends JFrame {
 
 				if (control.completoJuego()) {
 					dispose();
-					Fin fin = new Fin(nombre, Integer.parseInt(lblTiempo.getText()));
 					timer.stop();
+					//calculo el tiempo que jugó
+					int tiempoJuego = 600 - segundos;
+					//segundos los pasa para calcular el puntaje. el otro parametro es el tiempo que jugó el jugador
+					Fin fin = new Fin(nombre, segundos, String.valueOf(convertirAMinutosSegundos(tiempoJuego)), nivel);
 					fin.setResizable(false);
-					fin.setVisible(true);
+					fin.setVisible(true);	
 				}
 			}
+			
+			
 		});
 		timer.start();
+	}
+	
+	//Metodos Auxiliares
+	private String convertirAMinutosSegundos(int segundos) {
+		int minutos = segundos / 60;
+	    int segundosRestantes = segundos % 60;
+	    return minutos + " min : " + segundosRestantes + " seg";
 	}
 
 	private void validarEntrada(JTextField jText) {
@@ -190,5 +206,4 @@ public class Juego extends JFrame {
 			}
 		});
 	}
-
 }

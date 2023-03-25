@@ -19,7 +19,7 @@ public class Persistencia {
 	public void guardarJugador(Jugador jugador) {
 		try {
 			FileWriter writer = new FileWriter(archivo, true);
-			writer.write(jugador.getNombre().toUpperCase() + "," + jugador.getPuntaje() + "\n");
+			writer.write(jugador.getNombre().toUpperCase() + "," + jugador.getPuntaje()+ "," + jugador.getNivel() + "\n");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -38,29 +38,32 @@ public class Persistencia {
 				String[] partes = linea.split(",");
 				String nombre = partes[0];
 				int puntaje = Integer.parseInt(partes[1]);
-				Jugador jugador = new Jugador(nombre, puntaje);
+				String nivel = partes[2];
+				Jugador jugador = new Jugador(nombre, puntaje, nivel);
 				jugadores.add(jugador);
 			}
 			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// muestro la lista completa de jugadores
+		//  aux para mostrar la lista completa de jugadores
 		imprimirLista(jugadores);
 		// ordeno la lista entera de jugadores
 		Collections.sort(jugadores, new Comparator<Jugador>() {
 			@Override
 			public int compare(Jugador jugador1, Jugador jugador2) {
-				return jugador1.getPuntaje() - jugador2.getPuntaje();
+				return jugador2.getPuntaje() - jugador1.getPuntaje();
 			}
 		});
-		// muestro la lista completa ordenada de jugadores
+		// aux para mostrar la lista completa ordenada de jugadores
 		imprimirLista(jugadores);
 
 		// armo una lista con los top 3
 		List<Jugador> jugadoresTop3 = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
+			if (jugadores.size()>= i) {
 			jugadoresTop3.add(jugadores.get(i));
+			}
 		}
 		// muestro la lista completa ordenada de jugadores
 		imprimirLista(jugadoresTop3);

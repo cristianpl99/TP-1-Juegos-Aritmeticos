@@ -95,8 +95,8 @@ public class Logica {
 		return columnasCompletas;
 	}
 
-	public void crearJugador(String nombre, int puntaje) {
-		Jugador jugador = new Jugador(nombre, puntaje);
+	public void crearJugador(String nombre, int puntaje, String nivel) {
+		Jugador jugador = new Jugador(nombre, puntaje, nivel);
 		Persistencia persistencia = new Persistencia();
 		persistencia.guardarJugador(jugador);
 	}

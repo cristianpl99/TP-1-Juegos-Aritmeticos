@@ -20,7 +20,7 @@ public class Fin extends JFrame {
 
 	private JPanel contentPane;
 
-	public Fin(String nombre, int tiempo) {
+	public Fin(String nombre, int segundosJugados, String tiempo, String nivel) {
 		setTitle("Gracias por jugar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 486);
@@ -46,7 +46,7 @@ public class Fin extends JFrame {
 		lblNombre.setText(nombre);
 		contentPane.add(lblNombre);
 
-		JLabel lblTiempo = new JLabel("TU TIEMPO FUE DE " + tiempo + " SEGUNDOS");
+		JLabel lblTiempo = new JLabel("TU TIEMPO FUE DE " + tiempo);
 		lblTiempo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTiempo.setFont(new Font("Tahoma", Font.BOLD, 21));
 		lblTiempo.setBounds(0, 160, 424, 30);
@@ -59,38 +59,26 @@ public class Fin extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		Logica controladora = new Logica();
-		controladora.crearJugador(nombre, tiempo);
+		controladora.crearJugador(nombre, segundosJugados, nivel);
 		List<Jugador> jugadoresPodio = controladora.jugadoresPodio();
-
-		JLabel lblPrimerPuesto = new JLabel("");
-		if (jugadoresPodio.get(0) != null) {
-			lblPrimerPuesto.setText(
-					String.valueOf(jugadoresPodio.get(0).getNombre()) + " " + jugadoresPodio.get(0).getPuntaje());
+		
+		//creacion de los labels que muestran el podio de jugadores
+		int y = 260; 
+		for (int i = 0; i < 3; i++) {
+		    JLabel lblPuesto = new JLabel("");
+		    if (jugadoresPodio.size() > i) {
+		        lblPuesto.setText(String.valueOf(
+		        	jugadoresPodio.get(i).getNombre()) + " " +
+		            jugadoresPodio.get(i).getPuntaje() + "pts NIVEL " +
+				    jugadoresPodio.get(i).getNivel());
+		    }
+		    lblPuesto.setHorizontalAlignment(SwingConstants.CENTER);
+		    lblPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
+		    lblPuesto.setBounds(54, y, 292, 30);
+		    contentPane.add(lblPuesto);
+		    y += 40;
 		}
-		lblPrimerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblPrimerPuesto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrimerPuesto.setBounds(74, 258, 292, 30);
-		contentPane.add(lblPrimerPuesto);
 
-		JLabel lblSegundoPuesto = new JLabel("");
-		if (jugadoresPodio.size() > 1) {
-			lblSegundoPuesto.setText(
-					String.valueOf(jugadoresPodio.get(1).getNombre()) + " " + jugadoresPodio.get(1).getPuntaje());
-		}
-		lblSegundoPuesto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSegundoPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblSegundoPuesto.setBounds(74, 299, 292, 30);
-		contentPane.add(lblSegundoPuesto);
-
-		JLabel lblTercerPuesto = new JLabel("");
-		if (jugadoresPodio.size() > 2) {
-			lblTercerPuesto.setText(
-					String.valueOf(jugadoresPodio.get(2).getNombre()) + " " + jugadoresPodio.get(2).getPuntaje());
-		}
-		lblTercerPuesto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTercerPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblTercerPuesto.setBounds(74, 340, 292, 30);
-		contentPane.add(lblTercerPuesto);
 		
 		JButton btnReplay = new JButton("Jugar de nuevo");
 		btnReplay.addActionListener(new ActionListener() {

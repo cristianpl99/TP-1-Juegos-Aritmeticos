@@ -78,17 +78,17 @@ public class Inicio extends JFrame {
 				} else {
 					dispose();
 					if (comboBoxNivel.getSelectedItem().equals("Principiante")) {
-						Juego juego = new Juego(textNombre.getText(), 4, 650);
+						Juego juego = new Juego(textNombre.getText(), 4, 650, "principiante");
 						juego.setResizable(false);
 						juego.setVisible(true);
 					}
 					if (comboBoxNivel.getSelectedItem().equals("Intermedio")) {
-						Juego juego = new Juego(textNombre.getText(), 5, 750);
+						Juego juego = new Juego(textNombre.getText(), 5, 750, "intermedio");
 						juego.setResizable(false);
 						juego.setVisible(true);
 					}
 					if (comboBoxNivel.getSelectedItem().equals("Experto")) {
-						Juego juego = new Juego(textNombre.getText(), 6, 850);
+						Juego juego = new Juego(textNombre.getText(), 6, 850, "experto");
 						juego.setResizable(false);
 						juego.setVisible(true);
 					}
