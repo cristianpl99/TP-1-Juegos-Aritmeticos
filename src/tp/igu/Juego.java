@@ -46,22 +46,23 @@ public class Juego extends JFrame {
 		// creacion auto de la matriz visual
 		matrizText = new JTextField[matSize][matSize];
 
-		int y = 70;
-		int x = 100;
+		
+		int posicionHorizontal = 100;
+		int posicionVertical = 70;
 		for (int i = 0; i < matSize; i++) {
 			for (int j = 0; j < matSize; j++) {
 				JTextField text = new JTextField();
 				validarEntrada(text);
 				text.setHorizontalAlignment(SwingConstants.CENTER);
 				text.setFont(new Font("Tahoma", Font.BOLD, 25));
-				text.setBounds(x, y, 50, 43);
+				text.setBounds(posicionHorizontal, posicionVertical, 50, 43);
 				contentPane.add(text);
 				text.setColumns(10);
 				matrizText[i][j] = text;
-				x = x + 100;
+				posicionHorizontal = posicionHorizontal + 100;
 			}
-			y = y + 100;
-			x = 100;
+			posicionVertical = posicionVertical + 100;
+			posicionHorizontal = 100;
 		}
 
 		int xResultados = matrizText.length * 100 + 75;
@@ -134,7 +135,6 @@ public class Juego extends JFrame {
 		btnCheat.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCheat.setBounds(494, 463, 89, 23);
 		contentPane.add(btnCheat);
-		
 		
 		timer = new Timer(1000, new ActionListener() {
 		int segundos = 600;

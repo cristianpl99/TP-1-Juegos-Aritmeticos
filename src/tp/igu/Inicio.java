@@ -63,8 +63,8 @@ public class Inicio extends JFrame {
 		lblElegirNivel.setBounds(10, 195, 258, 41);
 		contentPane.add(lblElegirNivel);
 
-		JComboBox comboBoxNivel = new JComboBox();
-		comboBoxNivel.setModel(new DefaultComboBoxModel(new String[] { "Principiante", "Intermedio", "Experto" }));
+		JComboBox<String> comboBoxNivel = new JComboBox<String>();
+		comboBoxNivel.setModel(new DefaultComboBoxModel<String>(new String[] { "Principiante", "Intermedio", "Experto" }));
 		comboBoxNivel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		comboBoxNivel.setBounds(319, 195, 109, 29);
 		contentPane.add(comboBoxNivel);
@@ -77,21 +77,25 @@ public class Inicio extends JFrame {
 					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
 				} else {
 					dispose();
-					if (comboBoxNivel.getSelectedItem().equals("Principiante")) {
-						Juego juego = new Juego(textNombre.getText(), 4, 650, "principiante");
-						juego.setResizable(false);
-						juego.setVisible(true);
-					}
-					if (comboBoxNivel.getSelectedItem().equals("Intermedio")) {
-						Juego juego = new Juego(textNombre.getText(), 5, 750, "intermedio");
-						juego.setResizable(false);
-						juego.setVisible(true);
-					}
-					if (comboBoxNivel.getSelectedItem().equals("Experto")) {
-						Juego juego = new Juego(textNombre.getText(), 6, 850, "experto");
-						juego.setResizable(false);
-						juego.setVisible(true);
-					}
+					switch (comboBoxNivel.getSelectedItem().toString()) {
+				    case "Principiante":
+				        Juego juegoPrincipiante = new Juego(textNombre.getText(), 4, 650, "principiante");
+				        juegoPrincipiante.setResizable(false);
+				        juegoPrincipiante.setVisible(true);
+				        break;
+				    case "Intermedio":
+				        Juego juegoIntermedio = new Juego(textNombre.getText(), 5, 750, "intermedio");
+				        juegoIntermedio.setResizable(false);
+				        juegoIntermedio.setVisible(true);
+				        break;
+				    case "Experto":
+				        Juego juegoExperto = new Juego(textNombre.getText(), 6, 850, "experto");
+				        juegoExperto.setResizable(false);
+				        juegoExperto.setVisible(true);
+				        break;
+				    default:
+				        break;
+				}
 				}
 			}
 		});

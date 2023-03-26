@@ -63,7 +63,7 @@ public class Fin extends JFrame {
 		List<Jugador> jugadoresPodio = controladora.jugadoresPodio();
 		
 		//creacion de los labels que muestran el podio de jugadores
-		int y = 260; 
+		int posicionVertical = 260; 
 		for (int i = 0; i < 3; i++) {
 		    JLabel lblPuesto = new JLabel("");
 		    if (jugadoresPodio.size() > i) {
@@ -74,9 +74,9 @@ public class Fin extends JFrame {
 		    }
 		    lblPuesto.setHorizontalAlignment(SwingConstants.CENTER);
 		    lblPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
-		    lblPuesto.setBounds(54, y, 292, 30);
+		    lblPuesto.setBounds(54, posicionVertical, 292, 30);
 		    contentPane.add(lblPuesto);
-		    y += 40;
+		    posicionVertical += 40;
 		}
 
 		
