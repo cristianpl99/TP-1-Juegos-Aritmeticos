@@ -34,11 +34,12 @@ public class Inicio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("TRABAJO PRACTICO 1 : JUEGOS ARITMETICOS");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel.setBounds(32, 28, 497, 41);
-		contentPane.add(lblNewLabel);
+		// labels de la ventana inicio
+		JLabel lblTitulo = new JLabel("TRABAJO PRACTICO 1 : JUEGOS ARITMETICOS");
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblTitulo.setBounds(32, 28, 497, 41);
+		contentPane.add(lblTitulo);
 
 		textNombre = new JTextField();
 		textNombre.addKeyListener(new KeyAdapter() {
@@ -63,12 +64,21 @@ public class Inicio extends JFrame {
 		lblElegirNivel.setBounds(10, 195, 258, 41);
 		contentPane.add(lblElegirNivel);
 
-		JComboBox<String> comboBoxNivel = new JComboBox<String>();
-		comboBoxNivel.setModel(new DefaultComboBoxModel<String>(new String[] { "Principiante", "Intermedio", "Experto" }));
-		comboBoxNivel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		comboBoxNivel.setBounds(319, 195, 109, 29);
-		contentPane.add(comboBoxNivel);
+		JLabel lblIngreseNombre = new JLabel("INGRESE SU NOMBRE:");
+		lblIngreseNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIngreseNombre.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblIngreseNombre.setBounds(152, 86, 230, 41);
+		contentPane.add(lblIngreseNombre);
 
+		// box de niveles
+		JComboBox<String> comboBoxNiveles = new JComboBox<String>();
+		comboBoxNiveles
+				.setModel(new DefaultComboBoxModel<String>(new String[] { "Principiante", "Intermedio", "Experto" }));
+		comboBoxNiveles.setFont(new Font("Tahoma", Font.BOLD, 14));
+		comboBoxNiveles.setBounds(319, 195, 109, 29);
+		contentPane.add(comboBoxNiveles);
+
+		// boton comenzar el juego
 		JButton btnComenzar = new JButton("Empezar el Juego");
 		btnComenzar.addActionListener(new ActionListener() {
 
@@ -77,25 +87,25 @@ public class Inicio extends JFrame {
 					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
 				} else {
 					dispose();
-					switch (comboBoxNivel.getSelectedItem().toString()) {
-				    case "Principiante":
-				        Juego juegoPrincipiante = new Juego(textNombre.getText(), 4, 650, "principiante");
-				        juegoPrincipiante.setResizable(false);
-				        juegoPrincipiante.setVisible(true);
-				        break;
-				    case "Intermedio":
-				        Juego juegoIntermedio = new Juego(textNombre.getText(), 5, 750, "intermedio");
-				        juegoIntermedio.setResizable(false);
-				        juegoIntermedio.setVisible(true);
-				        break;
-				    case "Experto":
-				        Juego juegoExperto = new Juego(textNombre.getText(), 6, 850, "experto");
-				        juegoExperto.setResizable(false);
-				        juegoExperto.setVisible(true);
-				        break;
-				    default:
-				        break;
-				}
+					switch (comboBoxNiveles.getSelectedItem().toString()) {
+					case "Principiante":
+						PantallaJuego juegoPrincipiante = new PantallaJuego(textNombre.getText(), 4, 650, "principiante");
+						juegoPrincipiante.setResizable(false);
+						juegoPrincipiante.setVisible(true);
+						break;
+					case "Intermedio":
+						PantallaJuego juegoIntermedio = new PantallaJuego(textNombre.getText(), 5, 750, "intermedio");
+						juegoIntermedio.setResizable(false);
+						juegoIntermedio.setVisible(true);
+						break;
+					case "Experto":
+						PantallaJuego juegoExperto = new PantallaJuego(textNombre.getText(), 6, 850, "experto");
+						juegoExperto.setResizable(false);
+						juegoExperto.setVisible(true);
+						break;
+					default:
+						break;
+					}
 				}
 			}
 		});
@@ -103,11 +113,5 @@ public class Inicio extends JFrame {
 		btnComenzar.setBackground(new Color(192, 192, 192));
 		btnComenzar.setBounds(210, 276, 138, 41);
 		contentPane.add(btnComenzar);
-
-		JLabel lblIngreseNombre = new JLabel("INGRESE SU NOMBRE:");
-		lblIngreseNombre.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIngreseNombre.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblIngreseNombre.setBounds(152, 86, 230, 41);
-		contentPane.add(lblIngreseNombre);
 	}
 }

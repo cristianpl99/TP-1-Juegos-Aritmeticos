@@ -13,13 +13,15 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Persistencia {
-	String locacion = "src" + File.separator + "tp" + File.separator + "persistencia" + File.separator + "puntajes.txt"; ;
-	File archivo = new File(locacion);
+	String locacionDelArchivo = "src" + File.separator + "tp" + File.separator + "persistencia" + File.separator
+			+ "puntajes.txt";;
+	File archivo = new File(locacionDelArchivo);
 
 	public void guardarJugador(Jugador jugador) {
 		try {
 			FileWriter writer = new FileWriter(archivo, true);
-			writer.write(jugador.getNombre().toUpperCase() + "," + jugador.getPuntaje()+ "," + jugador.getNivel() + "\n");
+			writer.write(jugador.getNombre().toUpperCase() + "," + jugador.getPuntaje() + ","
+					+ jugador.getNivelElegido() + "\n");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -46,8 +48,6 @@ public class Persistencia {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//  aux para mostrar la lista completa de jugadores
-		imprimirLista(jugadores);
 		// ordeno la lista entera de jugadores
 		Collections.sort(jugadores, new Comparator<Jugador>() {
 			@Override
@@ -55,29 +55,15 @@ public class Persistencia {
 				return jugador2.getPuntaje() - jugador1.getPuntaje();
 			}
 		});
-		// aux para mostrar la lista completa ordenada de jugadores
-		imprimirLista(jugadores);
-
 		// armo una lista con los top 3
 		List<Jugador> jugadoresTop3 = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
-			if (jugadores.size()>= i) {
-			jugadoresTop3.add(jugadores.get(i));
+			if (jugadores.size() >= i) {
+				jugadoresTop3.add(jugadores.get(i));
 			}
 		}
-		// muestro la lista completa ordenada de jugadores
-		imprimirLista(jugadoresTop3);
 		// devuelvo la lista ordenada
 		return jugadoresTop3;
-	}
-
-	// aux de impresion
-	private void imprimirLista(List<Jugador> jugadoresTop3) {
-		for (Jugador jugador : jugadoresTop3) {
-			System.out.println(jugador.getNombre().toString() + " " + String.valueOf(jugador.getPuntaje()));
-
-		}
-		System.out.println(" \n");
 	}
 
 }

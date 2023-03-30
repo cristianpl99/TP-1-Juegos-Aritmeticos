@@ -1,10 +1,10 @@
 cambios faltantes:
 
--emprolijar codigo, eliminando comentarios, y eliminando aux de visualizacion innecesarios
+-arreglar lookAndField
+-cambiar iconos...?
+-poner colorinches
 
--solucionar bug marcadores vacio
-
--renombrar variables, nombres
+-agregar q el contruc pase el limitador del random
 
 problemas para el informe:
 -ingreso por teclado a cada casilla
