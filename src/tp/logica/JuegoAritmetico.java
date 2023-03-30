@@ -28,7 +28,7 @@ public class JuegoAritmetico {
 		}
 		this.matDeValores = mat;
 		// aux visualizacion
-		// this.imprimirMatriz();
+		this.imprimirMatriz();
 
 		filasCompletas = new boolean[filas];
 		for (int i = 0; i < filasCompletas.length; i++) {
@@ -77,14 +77,14 @@ public class JuegoAritmetico {
 	}
 
 	// aux de visualizacion
-//	public void imprimirMatriz() {
-//		for (int i = 0; i < this.matDeValores.length; i++) {
-//			for (int j = 0; j < this.matDeValores[0].length; j++) {
-//				System.out.print(this.matDeValores[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-//	}
+	public void imprimirMatriz() {
+		for (int i = 0; i < this.matDeValores.length; i++) {
+			for (int j = 0; j < this.matDeValores[0].length; j++) {
+				System.out.print(this.matDeValores[i][j] + " ");
+		}
+			System.out.println();
+		}
+	}
 
 	// funciones
 	public void ingresoDeResultados(int fila, int colum, int valor) {
