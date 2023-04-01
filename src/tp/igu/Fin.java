@@ -23,7 +23,7 @@ public class Fin extends JFrame {
 	public Fin(String nombre, int segundosJugados, String tiempo, String nivel) {
 		setTitle("Gracias por jugar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 486);
+		setBounds(100, 100, 450, 656);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
@@ -57,10 +57,11 @@ public class Fin extends JFrame {
 		lblNombreJugador.setText(nombre);
 		contentPane.add(lblNombreJugador);
 
-		JLabel lblMejoresPuntajes = new JLabel("MEJORES PUNTAJES");
+		JLabel lblMejoresPuntajes = new JLabel("TOP 5 MEJORES PUNTAJES");
+		lblMejoresPuntajes.setForeground(new Color(0, 64, 128));
 		lblMejoresPuntajes.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblMejoresPuntajes.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMejoresPuntajes.setBounds(122, 212, 191, 35);
+		lblMejoresPuntajes.setBounds(106, 212, 230, 35);
 		contentPane.add(lblMejoresPuntajes);
 
 		JuegoAritmetico logicaDelJuego = new JuegoAritmetico();
@@ -68,22 +69,23 @@ public class Fin extends JFrame {
 		List<Jugador> podioJugadores = logicaDelJuego.jugadoresDelPodio();
 
 		// creacion de los labels que muestran el podio de jugadores
-		int posicionVerticalDelPuesto = 260;
-		for (int i = 0; i < 3; i++) {
+		int posicionVerticalDelPuesto = 270;
+		for (int i = 0; i < 5; i++) {
 			JLabel lblPuesto = new JLabel("");
 			if (podioJugadores.size() > i) {
 				lblPuesto.setText(String.valueOf(podioJugadores.get(i).getNombre()) + " "
-						+ podioJugadores.get(i).getPuntaje() + "pts NIVEL " + podioJugadores.get(i).getNivelElegido());
+						+ podioJugadores.get(i).getPuntaje() + "pts NIVEL " + podioJugadores.get(i).getNivelElegido().toUpperCase());
 			}
-			lblPuesto.setHorizontalAlignment(SwingConstants.CENTER);
-			lblPuesto.setFont(new Font("Tahoma", Font.BOLD, 13));
-			lblPuesto.setBounds(54, posicionVerticalDelPuesto, 292, 30);
+			lblPuesto.setHorizontalAlignment(JLabel.CENTER);
+			lblPuesto.setFont(new Font("Tahoma", Font.BOLD, 14));
+			lblPuesto.setBounds(54, posicionVerticalDelPuesto, 332, 30);
 			contentPane.add(lblPuesto);
-			posicionVerticalDelPuesto += 40;
+			posicionVerticalDelPuesto += 45;
 		}
 
 		// botones de replay y cerrar
-		JButton btnReplay = new JButton("Jugar de nuevo");
+		JButton btnReplay = new JButton("JUGAR DE NUEVO");
+		btnReplay.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnReplay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Inicio inicio = new Inicio();
@@ -93,16 +95,17 @@ public class Fin extends JFrame {
 				dispose();
 			}
 		});
-		btnReplay.setBounds(36, 413, 129, 23);
+		btnReplay.setBounds(22, 571, 129, 35);
 		contentPane.add(btnReplay);
 
-		JButton btnCerrar = new JButton("Cerrar Juego");
+		JButton btnCerrar = new JButton("SALIR");
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnCerrar.setBounds(276, 413, 129, 23);
+		btnCerrar.setBounds(272, 571, 129, 35);
 		contentPane.add(btnCerrar);
 	}
 }

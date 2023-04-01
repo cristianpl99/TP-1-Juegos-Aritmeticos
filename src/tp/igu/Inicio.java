@@ -55,7 +55,7 @@ public class Inicio extends JFrame {
 		textNombre.setForeground(Color.GRAY);
 		textNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
 		textNombre.setColumns(10);
-		textNombre.setBounds(152, 118, 258, 20);
+		textNombre.setBounds(143, 137, 258, 34);
 		contentPane.add(textNombre);
 
 		JLabel lblElegirNivel = new JLabel("ELEGIR NIVEL");
@@ -75,7 +75,7 @@ public class Inicio extends JFrame {
 		comboBoxNiveles
 				.setModel(new DefaultComboBoxModel<String>(new String[] { "Principiante", "Intermedio", "Experto" }));
 		comboBoxNiveles.setFont(new Font("Tahoma", Font.BOLD, 14));
-		comboBoxNiveles.setBounds(319, 195, 109, 29);
+		comboBoxNiveles.setBounds(346, 203, 109, 29);
 		contentPane.add(comboBoxNiveles);
 
 		// boton comenzar el juego
@@ -84,8 +84,23 @@ public class Inicio extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				if (textNombre.getText().length() < 3) {
-					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho");
+					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho", 
+												"Error al iniciar el juego", JOptionPane.INFORMATION_MESSAGE);
 				} else {
+					JOptionPane.showMessageDialog(null, "  El objetivo del juego es completar las casillas vacias" + " \n " +
+														"con numeros enteros positivos logrando que la suma de" + " \n " +
+														"     los elementos de cada filas y columnas sean " + " \n " +
+														" iguales a los resultados propuestos en sus extremos" + " \n " +
+														" \n " +
+														" La matriz debe resolverse en menos de diez minutos y su" + " \n " +
+														"        tamaño será de acuerdo al nivel elegido." + " \n " +
+														" \n " +
+														"   La resolución correcta tendra un bonus multiplicador" + " \n "  +
+														"        en los niveles INTERMEDIO y EXPERTO." + " \n ", 
+														
+							"Reglas del juego", JOptionPane.INFORMATION_MESSAGE);
+					
+
 					dispose();
 					switch (comboBoxNiveles.getSelectedItem().toString()) {
 					case "Principiante":
@@ -109,9 +124,9 @@ public class Inicio extends JFrame {
 				}
 			}
 		});
-		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnComenzar.setBackground(new Color(192, 192, 192));
-		btnComenzar.setBounds(210, 276, 138, 41);
+		btnComenzar.setBounds(207, 278, 153, 41);
 		contentPane.add(btnComenzar);
 	}
 }

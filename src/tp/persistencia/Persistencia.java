@@ -57,7 +57,7 @@ public class Persistencia {
 		});
 		// armo una lista con los top 3
 		List<Jugador> jugadoresTop3 = new ArrayList<>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 5; i++) {
 			if (jugadores.size() >= i) {
 				jugadoresTop3.add(jugadores.get(i));
 			}

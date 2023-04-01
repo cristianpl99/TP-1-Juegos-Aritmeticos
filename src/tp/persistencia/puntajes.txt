@@ -9,3 +9,14 @@ ASD,0,principiante
 ASAF,564,principiante
 ASDFAF,566,principiante
 TYRETRETER,575,principiante
+DFGDFG,571,principiante
+SDGDFGDFG,572,principiante
+DFGDGDG,580,principiante
+SDFDSFDSFD,576,principiante
+WERWERWERW,580,principiante
+DFGDFGDF,576,principiante
+DFGERTERTE,573,principiante
+DFGDFGDFGD,580,principiante
+DFGDFGDFG,578,principiante
+DFGDFGDFGD,578,principiante
+ETERTERTER,568,principiante
