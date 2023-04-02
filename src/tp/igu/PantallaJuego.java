@@ -14,7 +14,6 @@ import javax.swing.Timer;
 
 import tp.logica.JuegoAritmetico;
 
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;

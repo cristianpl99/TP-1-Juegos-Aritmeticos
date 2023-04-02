@@ -1,9 +1,5 @@
 cambios faltantes:
 
--arreglar lookAndField
--cambiar iconos...?
--poner colorinches
-
 -agregar q el contruc pase el limitador del random
 
 problemas para el informe:
@@ -13,4 +9,5 @@ problemas para el informe:
 -bug marcadores vacio
 -automatizado de todo
 -bug de suma sin valores
+-hacer q ande el look and field
 - .....

@@ -55,15 +55,15 @@ public class Persistencia {
 				return jugador2.getPuntaje() - jugador1.getPuntaje();
 			}
 		});
-		// armo una lista con los top 3
-		List<Jugador> jugadoresTop3 = new ArrayList<>();
+		// armo una lista con los top 5
+		List<Jugador> jugadoresTop5 = new ArrayList<>();
 		for (int i = 0; i < 5; i++) {
 			if (jugadores.size() >= i) {
-				jugadoresTop3.add(jugadores.get(i));
+				jugadoresTop5.add(jugadores.get(i));
 			}
 		}
 		// devuelvo la lista ordenada
-		return jugadoresTop3;
+		return jugadoresTop5;
 	}
 
 }
