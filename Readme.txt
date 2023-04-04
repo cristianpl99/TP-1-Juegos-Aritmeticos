@@ -10,4 +10,5 @@ problemas para el informe:
 -automatizado de todo
 -bug de suma sin valores
 -hacer q ande el look and field
+- convencion de nombres y refactor general
 - .....
