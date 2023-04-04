@@ -18,12 +18,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class Inicio extends JFrame {
+public class StartScreen extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textNombre;
 
-	public Inicio() {
+	public StartScreen() {
 		setTitle("Programacion III - Bienvenidos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 399);
@@ -35,11 +35,11 @@ public class Inicio extends JFrame {
 		contentPane.setLayout(null);
 
 		// labels de la ventana inicio
-		JLabel lblTitulo = new JLabel("TRABAJO PRACTICO 1 : JUEGOS ARITMETICOS");
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblTitulo.setBounds(32, 28, 497, 41);
-		contentPane.add(lblTitulo);
+		JLabel lblTitle = new JLabel("TRABAJO PRACTICO 1 : JUEGOS ARITMETICOS");
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblTitle.setBounds(32, 28, 497, 41);
+		contentPane.add(lblTitle);
 
 		textNombre = new JTextField();
 		textNombre.addKeyListener(new KeyAdapter() {
@@ -58,29 +58,29 @@ public class Inicio extends JFrame {
 		textNombre.setBounds(143, 137, 258, 34);
 		contentPane.add(textNombre);
 
-		JLabel lblElegirNivel = new JLabel("ELEGIR NIVEL");
-		lblElegirNivel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblElegirNivel.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblElegirNivel.setBounds(10, 195, 258, 41);
-		contentPane.add(lblElegirNivel);
+		JLabel lblLevel = new JLabel("ELEGIR NIVEL");
+		lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLevel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblLevel.setBounds(10, 195, 258, 41);
+		contentPane.add(lblLevel);
 
-		JLabel lblIngreseNombre = new JLabel("INGRESE SU NOMBRE:");
-		lblIngreseNombre.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIngreseNombre.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblIngreseNombre.setBounds(152, 86, 230, 41);
-		contentPane.add(lblIngreseNombre);
+		JLabel lblName = new JLabel("INGRESE SU NOMBRE:");
+		lblName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblName.setBounds(152, 86, 230, 41);
+		contentPane.add(lblName);
 
 		// box de niveles
-		JComboBox<String> comboBoxNiveles = new JComboBox<String>();
-		comboBoxNiveles
+		JComboBox<String> comboBoxLevels = new JComboBox<String>();
+		comboBoxLevels
 				.setModel(new DefaultComboBoxModel<String>(new String[] { "Principiante", "Intermedio", "Experto" }));
-		comboBoxNiveles.setFont(new Font("Tahoma", Font.BOLD, 14));
-		comboBoxNiveles.setBounds(346, 203, 109, 29);
-		contentPane.add(comboBoxNiveles);
+		comboBoxLevels.setFont(new Font("Tahoma", Font.BOLD, 14));
+		comboBoxLevels.setBounds(346, 203, 109, 29);
+		contentPane.add(comboBoxLevels);
 
 		// boton comenzar el juego
-		JButton btnComenzar = new JButton("Empezar el Juego");
-		btnComenzar.addActionListener(new ActionListener() {
+		JButton btnStart = new JButton("Empezar el Juego");
+		btnStart.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				if (textNombre.getText().length() < 3) {
@@ -102,21 +102,21 @@ public class Inicio extends JFrame {
 					
 
 					dispose();
-					switch (comboBoxNiveles.getSelectedItem().toString()) {
+					switch (comboBoxLevels.getSelectedItem().toString()) {
 					case "Principiante":
-						PantallaJuego juegoPrincipiante = new PantallaJuego(textNombre.getText(), 4, 650, "principiante");
-						juegoPrincipiante.setResizable(false);
-						juegoPrincipiante.setVisible(true);
+						GameScreen beginnerGame = new GameScreen(textNombre.getText(), 4, 650, "principiante");
+						beginnerGame.setResizable(false);
+						beginnerGame.setVisible(true);
 						break;
 					case "Intermedio":
-						PantallaJuego juegoIntermedio = new PantallaJuego(textNombre.getText(), 5, 750, "intermedio");
-						juegoIntermedio.setResizable(false);
-						juegoIntermedio.setVisible(true);
+						GameScreen intermediateGame = new GameScreen(textNombre.getText(), 5, 750, "intermedio");
+						intermediateGame.setResizable(false);
+						intermediateGame.setVisible(true);
 						break;
 					case "Experto":
-						PantallaJuego juegoExperto = new PantallaJuego(textNombre.getText(), 6, 850, "experto");
-						juegoExperto.setResizable(false);
-						juegoExperto.setVisible(true);
+						GameScreen expertGame = new GameScreen(textNombre.getText(), 6, 850, "experto");
+						expertGame.setResizable(false);
+						expertGame.setVisible(true);
 						break;
 					default:
 						break;
@@ -124,9 +124,9 @@ public class Inicio extends JFrame {
 				}
 			}
 		});
-		btnComenzar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComenzar.setBackground(new Color(192, 192, 192));
-		btnComenzar.setBounds(207, 278, 153, 41);
-		contentPane.add(btnComenzar);
+		btnStart.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnStart.setBackground(new Color(192, 192, 192));
+		btnStart.setBounds(207, 278, 153, 41);
+		contentPane.add(btnStart);
 	}
 }

@@ -1,11 +1,11 @@
-package tp.logica;
+package tp.logic;
 
-public class Jugador {
+public class Player {
 	private String nombre;
 	private int puntaje;
 	private String nivelElegido;
 
-	public Jugador(String nombre, int puntaje, String nivel) {
+	public Player(String nombre, int puntaje, String nivel) {
 		this.nombre = nombre;
 		//pensar si esta bien el bonus de puntaje
 		if (nivel.equals("intermedio")) {

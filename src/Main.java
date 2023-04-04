@@ -1,7 +1,7 @@
 import javax.swing.UIManager;
 
 
-import tp.igu.Inicio;
+import tp.igu.StartScreen;
 
 public class Main {
 
@@ -12,9 +12,9 @@ public class Main {
 		 } catch(Exception e){
 	            System.out.println(e);
 	        }
-		Inicio inicio = new Inicio();
-		inicio.setResizable(false);
-		inicio.setVisible(true);
-		inicio.setLocationRelativeTo(null);
+		StartScreen launch = new StartScreen();
+		launch.setResizable(false);
+		launch.setVisible(true);
+		launch.setLocationRelativeTo(null);
 	}
 }
