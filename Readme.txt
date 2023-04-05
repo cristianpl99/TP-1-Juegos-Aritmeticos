@@ -1,7 +1,5 @@
 cambios faltantes:
 
--agregar q el contruc pase el limitador del random
-
 problemas para el informe:
 -ingreso por teclado a cada casilla
 -creacion de la matriz visual (la grilla)
