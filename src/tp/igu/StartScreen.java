@@ -83,8 +83,8 @@ public class StartScreen extends JFrame {
 		btnStart.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if (textNombre.getText().length() < 3) {
-					JOptionPane.showMessageDialog(null, "Tu nombre debe tener más de tres caracteres y menos de ocho", 
+				if (!validateName(textNombre.getText())) {
+					JOptionPane.showMessageDialog(null, "Tu nombre debe no ser vacio y tener más de tres caracteres y menos de ocho", 
 												"Error al iniciar el juego", JOptionPane.INFORMATION_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(null, "  El objetivo del juego es completar las casillas vacias" + " \n " +
@@ -122,6 +122,13 @@ public class StartScreen extends JFrame {
 						break;
 					}
 				}
+			}
+			//validacion nombre
+			private boolean validateName(String text) {
+				if (text.length() < 3 || text == null || text.trim().isEmpty()) {
+					return false;
+				}
+				return true;
 			}
 		});
 		btnStart.setFont(new Font("Tahoma", Font.BOLD, 14));

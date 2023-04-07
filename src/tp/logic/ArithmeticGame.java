@@ -76,17 +76,6 @@ public class ArithmeticGame {
 	public ArithmeticGame() {
 	}
 
-	// aux de visualizacion
-	public void printMat() {
-		for (int i = 0; i < this.valuesMat.length; i++) {
-			for (int j = 0; j < this.valuesMat[0].length; j++) {
-				System.out.print(this.valuesMat[i][j] + " ");
-		}
-			System.out.println();
-		}
-	}
-
-	// funciones
 	public void enterResults(int fila, int colum, int valor) {
 		valuesMat[fila][colum] = valor;
 	}
@@ -118,11 +107,15 @@ public class ArithmeticGame {
 					colSum = colSum + valuesMat[fila][col];
 				}
 			}
+			/*
 			if (colSum == columnsResults[col]) {
 				completedColumns[col] = true;
 			} else {
 				completedColumns[col] = false;
 			}
+			*/
+			completedColumns[col] = (colSum == columnsResults[col]) ? true : false;
+
 		}
 	}
 
@@ -137,11 +130,7 @@ public class ArithmeticGame {
 					sumaDeLaFila = sumaDeLaFila + valuesMat[fila][col];
 				}
 			}
-			if (sumaDeLaFila == rowsResults[fila]) {
-				completedRows[fila] = true;
-			} else {
-				completedRows[fila] = false;
-			}
+			completedRows[fila] = sumaDeLaFila == rowsResults[fila] ? true : false;
 		}
 	}
 
@@ -178,6 +167,16 @@ public class ArithmeticGame {
 
 	public int getRowResults(int resul) {
 		return rowsResults[resul];
+	}
+
+	// aux de visualizacion
+	private void printMat() {
+		for (int i = 0; i < this.valuesMat.length; i++) {
+			for (int j = 0; j < this.valuesMat[0].length; j++) {
+				System.out.print(this.valuesMat[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }

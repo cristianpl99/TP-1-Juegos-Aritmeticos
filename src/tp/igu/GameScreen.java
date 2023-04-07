@@ -186,12 +186,8 @@ public class GameScreen extends JFrame {
 			public void keyTyped(KeyEvent e) {
 				int key = e.getKeyChar();
 				boolean numeros = key >= 48 && key <= 57;
-
-				if (!numeros || jText.getText().trim().length() == 2) {
-					e.consume();
-				}
-				if (key == 48 && jText.getText().trim().length() == 0) {
-					e.consume();
+				if ((!numeros || jText.getText().trim().length() == 2) || (key == 48 && jText.getText().trim().length() == 0)){
+				    e.consume();
 				}
 			}
 		});
