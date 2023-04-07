@@ -1,7 +1,5 @@
 cambios faltantes:
 
--agregar q el contruc pase el limitador del random
-
 problemas para el informe:
 -ingreso por teclado a cada casilla
 -creacion de la matriz visual (la grilla)
@@ -10,4 +8,5 @@ problemas para el informe:
 -automatizado de todo
 -bug de suma sin valores
 -hacer q ande el look and field
+- convencion de nombres y refactor general
 - .....
