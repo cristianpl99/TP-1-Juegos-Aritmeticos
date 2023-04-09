@@ -66,15 +66,15 @@ public class FinalScreen extends JFrame {
 
 		ArithmeticGame game = new ArithmeticGame();
 		game.createPlayer(nombre, secondsPlayed, nivel);
-		List<Player> topPlayers = game.jugadoresDelPodio();
+		List<Player> topPlayers = game.topPlayers();
 
 		// creacion de los labels que muestran el podio de jugadores
 		int lblScoreVerticalPosition = 270;
 		for (int i = 0; i < 5; i++) {
 			JLabel lblPosition = new JLabel("");
 			if (topPlayers.size() > i) {
-				lblPosition.setText(String.valueOf(topPlayers.get(i).getNombre()) + " "
-						+ topPlayers.get(i).getPuntaje() + "pts NIVEL " + topPlayers.get(i).getNivelElegido().toUpperCase());
+				lblPosition.setText(String.valueOf(topPlayers.get(i).getName()) + " "
+						+ topPlayers.get(i).getScore() + "pts NIVEL " + topPlayers.get(i).getLevel().toUpperCase());
 			}
 			lblPosition.setHorizontalAlignment(JLabel.CENTER);
 			lblPosition.setFont(new Font("Tahoma", Font.BOLD, 14));

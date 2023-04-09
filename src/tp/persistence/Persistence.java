@@ -20,8 +20,8 @@ public class Persistence {
 	public void savePlayer(Player player) {
 		try {
 			FileWriter writer = new FileWriter(file, true);
-			writer.write(player.getNombre().toUpperCase() + "," + player.getPuntaje() + ","
-					+ player.getNivelElegido() + "\n");
+			writer.write(player.getName().toUpperCase() + "," + player.getScore() + ","
+					+ player.getLevel() + "\n");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -41,7 +41,11 @@ public class Persistence {
 				String name = parts[0];
 				int score = Integer.parseInt(parts[1]);
 				String level = parts[2];
-				Player player = new Player(name, score, level);
+				
+				Player player = new Player();
+				player.setName(name);
+				player.setLevel(level);
+				player.setScore(score);
 				players.add(player);
 			}
 			reader.close();
@@ -52,7 +56,7 @@ public class Persistence {
 		Collections.sort(players, new Comparator<Player>() {
 			@Override
 			public int compare(Player player1, Player player2) {
-				return player1.getPuntaje() - player1.getPuntaje();
+				return player2.getScore() - player1.getScore();
 			}
 		});
 		// armo una lista con los top 5

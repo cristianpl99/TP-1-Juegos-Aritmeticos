@@ -117,8 +117,7 @@ public class GameScreen extends JFrame {
 		for (int i = 0; i < matSize; i++) {
 			columnCheckPanels[i] = new Panel();
 			columnCheckPanels[i].setBackground(Color.RED);
-			columnCheckPanels[i].setBounds(100 + (i * 100), yPanelCheck, checkPanelWidth,
-					checkPanelHeight);
+			columnCheckPanels[i].setBounds(100 + (i * 100), yPanelCheck, checkPanelWidth, checkPanelHeight);
 			contentPane.add(columnCheckPanels[i]);
 		}
 
@@ -134,11 +133,10 @@ public class GameScreen extends JFrame {
 					for (int j = 0; j < matSize; j++) {
 						JTextField textField = JTextFieldsMat[i][j];
 						int valor = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
-						//arithmeticGame.ingresoDeResultados(i, j, valor);
 						arithmeticGame.enterResults(i, j, valor);
 					}
 				}
-				//arithmeticGame.actualizarEstadosFilaYColum();
+				
 				arithmeticGame.updateMatStatus();
 
 				// chequeos de filas y colum para cambiar colores
@@ -148,13 +146,13 @@ public class GameScreen extends JFrame {
 					rowCheckPanels[i].setBackground(checkColor);
 				}
 
-				ArrayList<Boolean> completedColumns = arithmeticGame.completeColumnss();
+				ArrayList<Boolean> completedColumns = arithmeticGame.completeColumns();
 				for (int i = 0; i < completedRows.size(); i++) {
 					boolean completedColumn = completedColumns.get(i);
 					Color checkColor = completedColumn ? new Color(0, 255, 0) : new Color(255, 0, 0);
 					columnCheckPanels[i].setBackground(checkColor);
 				}
-
+				//chequeo final de fin de juego para continuar o no.
 				if (arithmeticGame.isGameComplete() || seconds == 0) {
 					dispose();
 					timer.stop();
@@ -173,13 +171,14 @@ public class GameScreen extends JFrame {
 		timer.start();
 	}
 
-	// Metodos Auxiliares
+	//metodos auxiliares
+	//conversor para el contador de tiempo a minutos/segundos
 	private String convertToTimeFormat(int seconds) {
 		int minutes = seconds / 60;
 		int remainingSeconds = seconds % 60;
 		return minutes + " min : " + remainingSeconds + " seg";
 	}
-
+	//validador de entradas en las casillas
 	private void entryValidation(JTextField jText) {
 		jText.addKeyListener(new KeyAdapter() {
 			@Override

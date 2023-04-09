@@ -16,6 +16,9 @@ public class ArithmeticGame {
 	private boolean[] completedColumns;
 
 	// constructor
+	public ArithmeticGame() {
+	}
+	
 	public ArithmeticGame(int rows, int columns) {
 		int mat[][] = new int[rows][columns];
 		random = new Random(System.currentTimeMillis());
@@ -72,12 +75,9 @@ public class ArithmeticGame {
 			}
 		}
 	}
-
-	public ArithmeticGame() {
-	}
-
-	public void enterResults(int fila, int colum, int valor) {
-		valuesMat[fila][colum] = valor;
+	
+	public void enterResults(int fila, int colum, int value) {
+		valuesMat[fila][colum] = value;
 	}
 
 	public boolean isGameComplete() {
@@ -99,23 +99,15 @@ public class ArithmeticGame {
 	private void updateColumns() {
 		for (int col = 0; col < valuesMat[0].length; col++) {
 			int colSum = 0;
-			for (int fila = 0; fila < valuesMat.length; fila++) {
-				if (valuesMat[fila][col] == 0) {
+			for (int row = 0; row < valuesMat.length; row++) {
+				if (valuesMat[row][col] == 0) {
 					colSum = 0;
 					break;
 				} else {
-					colSum = colSum + valuesMat[fila][col];
+					colSum = colSum + valuesMat[row][col];
 				}
 			}
-			/*
-			if (colSum == columnsResults[col]) {
-				completedColumns[col] = true;
-			} else {
-				completedColumns[col] = false;
-			}
-			*/
 			completedColumns[col] = (colSum == columnsResults[col]) ? true : false;
-
 		}
 	}
 
@@ -142,7 +134,7 @@ public class ArithmeticGame {
 		return compRows;
 	}
 
-	public ArrayList<Boolean> completeColumnss() {
+	public ArrayList<Boolean> completeColumns() {
 		ArrayList<Boolean> compCols = new ArrayList<Boolean>();
 		for (int i = 0; i < completedColumns.length; i++) {
 			compCols.add(completedColumns[i]);
@@ -156,9 +148,9 @@ public class ArithmeticGame {
 		persistence.savePlayer(player);
 	}
 
-	public List<Player> jugadoresDelPodio() {
-		Persistence persistencia = new Persistence();
-		return persistencia.fetchPlayers();
+	public List<Player> topPlayers() {
+		Persistence persistence = new Persistence();
+		return persistence.fetchPlayers();
 	}
 
 	public int getColumResults(int resul) {
